@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import AuthButton from '../../buttons/auth/AuthButton';
+import CloseIcon from '@mui/icons-material/Close';
+import DensityMediumIcon from '@mui/icons-material/DensityMedium';
 
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
@@ -7,25 +8,47 @@ const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
   return (
     <header
       {...headerProps}
-      className={`w-full flex flex-row justify-between ${className}`}
+      // className={`w-full flex flex-row justify-between ${className}`}
+      className={`fixed w-full top-0 left-0 bg-[var(--body-color)] z-[var(--z-fixed)] transition-shadow duration-400`}
     >
-      <div className="space-x-5 m-5">
-        <Link href="/" className="hover:underline">
-          Home
+      <nav className="">
+        <Link href="/">
+          <h3>Hector Nguyen</h3>
         </Link>
-        <Link href="/" className="hover:underline">
-          Store
-        </Link>
-      </div>
-      <div className="space-x-5 m-5">
-        <Link href="/" className="hover:underline hidden sm:inline">
-          Gmail
-        </Link>
-        <Link href="/" className="hover:underline hidden sm:inline">
-          Images
-        </Link>
-        <AuthButton />
-      </div>
+
+        <div>
+          <ul>
+            <li>
+              <Link href="/" className="hover:underline">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/" className="hover:underline">
+                About me
+              </Link>
+            </li>
+            <li>
+              <Link href="/" className="hover:underline">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link href="/" className="hover:underline">
+                Contact me
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <CloseIcon></CloseIcon>
+        </div>
+
+        <div>
+          <DensityMediumIcon></DensityMediumIcon>
+        </div>
+      </nav>
     </header>
   );
 };

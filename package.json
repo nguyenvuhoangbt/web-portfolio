@@ -16,6 +16,11 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/base": "^5.0.0-beta.21",
+    "@mui/icons-material": "^5.14.15",
+    "@mui/material": "^5.14.15",
     "@storybook/addon-essentials": "7.5.1",
     "@storybook/addon-interactions": "7.5.1",
     "@storybook/addon-links": "7.5.1",
@@ -33,11 +38,9 @@
     "eslint-config-next": "14.0.0",
     "eslint-plugin-storybook": "^0.6.15",
     "postcss": "^8",
+    "react-app-rewired": "^2.2.1",
     "storybook": "7.5.1",
     "tailwindcss": "^3",
     "typescript": "^5"
-  },
-  "resolutions": {
-    "webpack": "^5"
   }
 }
