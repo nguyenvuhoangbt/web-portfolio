@@ -1,6 +1,18 @@
 import type { Preview } from '@storybook/react';
-import 'tailwindcss/tailwind.css';
+import { withThemeFromJSXProvider } from '@storybook/addon-themes';
+import { ThemeProvider } from '@mui/material';
+import { theme } from '../src/theme/MyTheme';
 import '@/public/globals.css';
+
+export const decorators = [
+  withThemeFromJSXProvider({
+    themes: {
+      myTheme: theme,
+    },
+    defaultTheme: 'myTheme',
+    Provider: ThemeProvider,
+  }),
+];
 
 const preview: Preview = {
   parameters: {
