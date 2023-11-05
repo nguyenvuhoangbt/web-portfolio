@@ -1,12 +1,9 @@
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
-import Player from 'src/components/test/Player';
-import { NextPageWithLayout } from './page';
+import { NextPageWithLayout } from './app';
 
 const Home: NextPageWithLayout = () => {
   return (
-    <section className="flex flex-col items-center gap-y-5 mt-12 sm:mt-36">
-      {/* <Player /> */}
-    </section>
+    <section className="flex flex-col items-center gap-y-5 mt-12 sm:mt-36"></section>
   );
 };
 

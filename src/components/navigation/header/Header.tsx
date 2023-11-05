@@ -1,28 +1,10 @@
-import { Dispatch, SetStateAction, useState } from 'react';
 import Link from 'next/link';
 import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
 import styles from './Header.module.css';
-import { Button } from '@mui/material';
-
-interface MenuButtonProps {
-  isOpen: boolean;
-  toggleMenu: Dispatch<SetStateAction<boolean>>;
-}
-
-function MenuButton({ isOpen, toggleMenu }: MenuButtonProps) {
-  return (
-    <Button
-      variant="contained"
-      className="min-w-8 h-8"
-      onClick={() => {
-        toggleMenu(!isOpen);
-      }}
-    >
-      <MenuIcon className="text-xl" />
-    </Button>
-  );
-}
+import MenuButton from '@/src/components/button/navigation/MenuButton';
+import NavigationContext from '@/src/state/navigation/NavigationContext';
+import { Dispatch, SetStateAction } from 'react';
+import { useContext } from 'react';
 
 interface CloseMenuButtonProps {
   toggleMenu: Dispatch<SetStateAction<boolean>>;
@@ -44,13 +26,13 @@ function CloseMenuButton({ toggleMenu }: CloseMenuButtonProps) {
 
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
-const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
+const Header: React.FC<IHeader> = ({ ...headerProps }) => {
+  const { isOpenMenu, setIsOpenMenu } = useContext(NavigationContext);
 
   return (
     <header
       {...headerProps}
-      className={`${className} fixed w-full p-4 top-0 left-0 bg-[var(--body-color)] z-fixed transition-shadow duration-400`}
+      className={`fixed w-full p-4 top-0 left-0 bg-[var(--body-color)] z-fixed transition-shadow duration-400`}
     >
       <nav className="relative h-[var(--header-height)] flex justify-between items-center">
         <Link
@@ -64,7 +46,7 @@ const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
         </Link>
 
         <div
-          className={`fixed z-fixed left-0 bg-black bg-opacity-75 pt-7 pb-20 w-full text-center backdrop-blur-1 transition-top duration-400 ${
+          className={`fixed z-fixed left-0 bg-black bg-opacity-75 pt-7 pb-20 w-full text-center backdrop-filter backdrop-blur-2 transition-top duration-400 ${
             isOpenMenu ? 'top-0' : '-top-full'
           }`}
           id="nav-menu"
@@ -114,10 +96,10 @@ const Header: React.FC<IHeader> = ({ className, ...headerProps }) => {
             </li>
           </ul>
 
-          <CloseMenuButton toggleMenu={setIsOpenMenu} />
+          <CloseMenuButton toggleMenu={() => setIsOpenMenu(false)} />
         </div>
 
-        <MenuButton isOpen={isOpenMenu} toggleMenu={setIsOpenMenu} />
+        <MenuButton />
       </nav>
     </header>
   );

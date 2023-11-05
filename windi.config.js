@@ -9,11 +9,6 @@ export default defineConfig({
     zIndex: {
       fixed: 100,
     },
-    extend: {
-      backdropFilter: {
-        'blur-1': 'blur(1px)',
-      },
-    },
   },
   plugins: [require('windicss/plugin/filters')],
 });
