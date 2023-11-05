@@ -1,31 +1,30 @@
 import NavigationContext from '@/src/state/navigation/NavigationContext';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useContext } from 'react';
-import { Button, styled } from '@mui/material';
+import { Button } from '@mui/material';
 import { NavigationProvider } from '@/src/state/navigation/NavigationContext';
 
-export interface IMenuButton extends React.ComponentPropsWithoutRef<'button'> {}
+export interface IMenuButton extends React.ComponentPropsWithoutRef<'button'> {
+  variant?: 'text' | 'outlined' | 'contained';
+}
 
-const StyledButton = styled(Button)(() => ({
-  minWidth: '2rem',
-  height: '2rem',
-  padding: 0,
-}));
-
-const MenuButton: React.FC<IMenuButton> = () => {
+const MenuButton: React.FC<IMenuButton> = ({
+  variant = 'text',
+  ...props
+}: IMenuButton) => {
   const { setIsOpenMenu } = useContext(NavigationContext);
 
   return (
     <NavigationProvider>
-      <StyledButton
-        variant="contained"
-        className="min-w-20"
+      <Button
+        variant={variant}
+        className="min-w-8 h-8 p-0"
         onClick={() => {
           setIsOpenMenu(true);
         }}
       >
         <MenuIcon className="text-xl" />
-      </StyledButton>
+      </Button>
     </NavigationProvider>
   );
 };
