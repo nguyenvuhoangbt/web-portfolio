@@ -1,7 +1,9 @@
 import { defineConfig } from 'windicss/helpers';
 
 export default defineConfig({
-  attributify: true,
+  attributify: {
+    prefix: 'w-',
+  },
   extract: {
     include: ['**/*.{jsx,tsx,css}'],
     exclude: ['node_modules', '.git', '.next'],

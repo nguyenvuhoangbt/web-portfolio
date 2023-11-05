@@ -9,8 +9,7 @@ export interface IMenuButton extends React.ComponentPropsWithoutRef<'button'> {
 }
 
 const MenuButton: React.FC<IMenuButton> = ({
-  variant = 'text',
-  ...props
+  variant = 'contained',
 }: IMenuButton) => {
   const { setIsOpenMenu } = useContext(NavigationContext);
 

@@ -3,26 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import styles from './Header.module.css';
 import MenuButton from '@/src/components/button/navigation/MenuButton';
 import NavigationContext from '@/src/state/navigation/NavigationContext';
-import { Dispatch, SetStateAction } from 'react';
 import { useContext } from 'react';
-
-interface CloseMenuButtonProps {
-  toggleMenu: Dispatch<SetStateAction<boolean>>;
-}
-
-function CloseMenuButton({ toggleMenu }: CloseMenuButtonProps) {
-  return (
-    <div
-      className="nav__close text-[var(--white-color)] absolute text-2xl top-6 right-8 cursor-pointer"
-      id="nav-close"
-      onClick={() => {
-        toggleMenu(false);
-      }}
-    >
-      <CloseIcon></CloseIcon>
-    </div>
-  );
-}
 
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
@@ -56,7 +37,12 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           </span>
 
           <h3
-            className={`${styles.nav__name} text-[var(--white-color)] relative w-max mx-auto mt-0 mb-12 text-xl`}
+            w-w="max"
+            w-pos="relative"
+            w-text="xl $white-color"
+            w-m="x-auto t-0 b-12"
+            w-before="content-DEFAULT w-10 h-px bg-[var(--text-color-light)] absolute top-1/2 -right-16"
+            w-after="content-DEFAULT w-10 h-px bg-[var(--text-color-light)] absolute top-1/2 -left-16"
           >
             Hector
           </h3>
@@ -96,7 +82,15 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             </li>
           </ul>
 
-          <CloseMenuButton toggleMenu={() => setIsOpenMenu(false)} />
+          <div
+            className="nav__close text-[var(--white-color)] absolute text-2xl top-6 right-8 cursor-pointer"
+            id="nav-close"
+            onClick={() => {
+              setIsOpenMenu(false);
+            }}
+          >
+            <CloseIcon />
+          </div>
         </div>
 
         <MenuButton />
