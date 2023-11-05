@@ -1,5 +1,5 @@
 import { AppPropsWithLayout } from './app';
-import { Provider } from './providers';
+import Provider from './providers';
 import '@/public/globals.css';
 import 'windi.css';
 

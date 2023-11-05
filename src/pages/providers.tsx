@@ -12,8 +12,6 @@ const compose = (providers: ProviderType[]) => {
     );
 };
 
-export const Provider = compose([
-  AuthProvider,
-  NavigationProvider,
-  MyThemeProvider,
-]);
+const Provider = compose([AuthProvider, NavigationProvider, MyThemeProvider]);
+
+export default Provider;
