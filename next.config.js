@@ -4,6 +4,10 @@ const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 
 const nextConfig = {
   webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
     config.plugins.push(new WindiCSSWebpackPlugin());
     return config;
   },

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import CloseIcon from '@mui/icons-material/Close';
-import styles from './Header.module.css';
 import MenuButton from '@/src/components/button/navigation/MenuButton';
 import NavigationContext from '@/src/state/navigation/NavigationContext';
 import { useContext } from 'react';
@@ -23,7 +22,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           <span className="w-8 h-8 bg-[var(--black-color)] text-[var(--white-color)] grid place-items-center rounded-full">
             H
           </span>
-          <span className="nav__logo-name">Hector Nguyen</span>
+          <span>Hector Nguyen</span>
         </Link>
 
         <div
@@ -48,34 +47,38 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           </h3>
 
           <ul className="flex flex-col gap-y-10">
-            <li className="nav__item">
+            <li>
               <Link
                 href="/"
-                className={`${styles.nav__link} relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
               >
                 Home
               </Link>
             </li>
-            <li className="nav__item">
+            <li>
               <Link
                 href="/"
-                className={`${styles.nav__link} relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
               >
                 About me
               </Link>
             </li>
-            <li className="nav__item">
+            <li>
               <Link
                 href="/"
-                className={`${styles.nav__link} relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
               >
                 Projects
               </Link>
             </li>
-            <li className="nav__item">
+            <li>
               <Link
                 href="/"
-                className={`${styles.nav__link} relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
               >
                 Contact me
               </Link>
@@ -83,7 +86,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           </ul>
 
           <div
-            className="nav__close text-[var(--white-color)] absolute text-2xl top-6 right-8 cursor-pointer"
+            className="text-[var(--white-color)] absolute text-2xl top-6 right-8 cursor-pointer"
             id="nav-close"
             onClick={() => {
               setIsOpenMenu(false);
