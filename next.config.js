@@ -1,4 +1,16 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    config.plugins.push(new WindiCSSWebpackPlugin());
+    return config;
+  },
+};
+
+module.exports = nextConfig;

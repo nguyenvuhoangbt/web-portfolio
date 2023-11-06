@@ -1,6 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import BaseTemplate, { IBaseTemplate } from './BaseTemplate';
 import { mockBaseTemplateProps } from './BaseTemplate.mocks';
+import { StyledEngineProvider } from '@mui/material';
 
 export default {
   title: 'templates/BaseTemplate',
@@ -11,7 +12,9 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof BaseTemplate> = (args) => (
-  <BaseTemplate {...args} />
+  <StyledEngineProvider injectFirst>
+    <BaseTemplate {...args} />
+  </StyledEngineProvider>
 );
 
 export const Base = Template.bind({});
