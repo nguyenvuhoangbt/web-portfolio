@@ -25,7 +25,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           <span className="w-8 h-8 bg-[var(--black-color)] text-[var(--white-color)] grid place-items-center rounded-full">
             H
           </span>
-          <span>{lang.author.name}</span>
+
+          <span w-display="hidden sm:block">{lang.author.name}</span>
         </Link>
 
         <div

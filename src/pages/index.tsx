@@ -16,6 +16,8 @@ import ButtonScrollDown from '@/src/components/button/ScrollDown';
 import { NextPageWithLayout } from '@/src/pages/app';
 import { LangType } from '@/src/pages/app';
 import useTranslation from '@/src/hooks/useTranslation';
+import { StyledEngineProvider } from '@mui/material/styles';
+
 
 const HomeSection: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
@@ -204,10 +206,12 @@ const Home: NextPageWithLayout = () => {
   };
 
   return (
-    <main w-overflow="auto" w-scrollbar="hide">
-      <HomeSection lang={homeLang}></HomeSection>
-      <AboutSection lang={aboutLang}></AboutSection>
-    </main>
+    <StyledEngineProvider injectFirst>
+      <main w-overflow="auto" w-scrollbar="hide">
+        <HomeSection lang={homeLang}></HomeSection>
+        <AboutSection lang={aboutLang}></AboutSection>
+      </main>
+    </StyledEngineProvider>
   );
 };
 

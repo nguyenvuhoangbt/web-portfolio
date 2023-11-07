@@ -16,7 +16,7 @@ export default defineConfig({
       fixed: 100,
     },
     fontSize: {
-      biggest: '2.5rem',
+      biggest: '2rem',
       h2: '1.25rem',
       normal: '1rem',
       small: '0.813rem',
