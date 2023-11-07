@@ -1,6 +1,6 @@
-import { IMenuButton } from './MenuButton';
+import { IButton } from './IButton';
 
-const base: IMenuButton = {
+const base: IButton = {
   variant: 'contained',
 };
 

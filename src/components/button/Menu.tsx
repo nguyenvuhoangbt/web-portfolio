@@ -3,14 +3,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useContext } from 'react';
 import { Button } from '@mui/material';
 import { NavigationProvider } from '@/src/state/navigation/NavigationContext';
+import { IButton } from './IButton';
 
-export interface IMenuButton extends React.ComponentPropsWithoutRef<'button'> {
-  variant?: 'text' | 'outlined' | 'contained';
-}
-
-const MenuButton: React.FC<IMenuButton> = ({
-  variant = 'contained',
-}: IMenuButton) => {
+const ButtonMenu: React.FC<IButton> = ({ variant = 'contained' }: IButton) => {
   const { setIsOpenMenu } = useContext(NavigationContext);
 
   return (
@@ -28,4 +23,4 @@ const MenuButton: React.FC<IMenuButton> = ({
   );
 };
 
-export default MenuButton;
+export default ButtonMenu;

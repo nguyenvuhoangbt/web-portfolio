@@ -1,13 +1,16 @@
 import Link from 'next/link';
 import CloseIcon from '@mui/icons-material/Close';
-import MenuButton from '@/src/components/button/navigation/MenuButton';
+import ButtonMenu from '@/src/components/button/Menu';
+import ButtonSwitchLanguage from '@/src/components/button/SwitchLanguage';
 import NavigationContext from '@/src/state/navigation/NavigationContext';
 import { useContext } from 'react';
+import useTranslation from '@/src/hooks/useTranslation';
 
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
 const Header: React.FC<IHeader> = ({ ...headerProps }) => {
   const { isOpenMenu, setIsOpenMenu } = useContext(NavigationContext);
+  const lang = useTranslation();
 
   return (
     <header
@@ -22,7 +25,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           <span className="w-8 h-8 bg-[var(--black-color)] text-[var(--white-color)] grid place-items-center rounded-full">
             H
           </span>
-          <span>Hector Nguyen</span>
+          <span w-display="hidden sm:block">{lang.author.name}</span>
         </Link>
 
         <div
@@ -92,11 +95,14 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
               setIsOpenMenu(false);
             }}
           >
-            <CloseIcon />
+            <CloseIcon></CloseIcon>
           </div>
         </div>
 
-        <MenuButton />
+        <div w-flex="~" w-gap="4">
+          <ButtonSwitchLanguage></ButtonSwitchLanguage>
+          <ButtonMenu></ButtonMenu>
+        </div>
       </nav>
     </header>
   );

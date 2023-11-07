@@ -1,10 +1,11 @@
-import MenuButton, { IMenuButton } from './MenuButton';
+import MenuButton from './Menu';
+import { IButton } from './IButton';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
-import { mockMenuButtonProps } from './MenuButton.mocks';
+import { mockMenuButtonProps } from './Menu.mocks';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 const meta = {
-  title: 'navigation/MenuButton',
+  title: 'Button/Menu',
   component: MenuButton,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
@@ -24,13 +25,13 @@ export const Base = Template.bind({});
 
 Base.args = {
   ...mockMenuButtonProps.base,
-} as IMenuButton;
+} as IButton;
 
-type Story = StoryObj<typeof meta>;
+// type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
-  args: {
-    variant: 'contained',
-  },
-};
+// // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+// export const Primary: Story = {
+//   args: {
+//     variant: 'contained',
+//   },
+// };
