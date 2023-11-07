@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Footer from '../../navigation/footer/Footer';
-import Header from '../../navigation/header/Header';
+import Header from '@/src/components/navigation/Header';
+import useTranslation from '@/src/hooks/useTranslation';
 import { Raleway } from 'next/font/google';
 
 const font = Raleway({ weight: ['600', '700'], subsets: ['latin'] });
@@ -14,6 +14,8 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   justify = 'items-center',
   ...divProps
 }) => {
+  const lang = useTranslation();
+
   return (
     <>
       <style jsx global>{`
@@ -22,7 +24,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         }
       `}</style>
       <Head>
-        <title>Hector Nguyen | Portfolio</title>
+        <title>{`${lang.author.name} | Portfolio`}</title>
       </Head>
       <div {...divProps} className={`h-screen flex flex-col ${justify}`}>
         <Header />
