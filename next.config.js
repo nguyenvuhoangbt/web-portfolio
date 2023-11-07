@@ -11,6 +11,11 @@ const nextConfig = {
     config.plugins.push(new WindiCSSWebpackPlugin());
     return config;
   },
+  i18n: {
+    locales: ['en', 'vi', 'zh'],
+    defaultLocale: 'en',
+    localeDetection: false,
+  },
 };
 
 module.exports = nextConfig;
