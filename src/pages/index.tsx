@@ -18,6 +18,7 @@ import { LangType } from '@/src/pages/app';
 import useTranslation from '@/src/hooks/useTranslation';
 import { StyledEngineProvider } from '@mui/material/styles';
 
+
 const HomeSection: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
     <section w-p="t-20 b-8" id="home">
