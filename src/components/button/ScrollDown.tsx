@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { useSpring, animated } from '@react-spring/web';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const ScrollDownButton: React.FC<IButton> = ({
+const ButtonScrollDown: React.FC<IButton> = ({
   variant = 'contained',
 }: IButton) => {
   const props = useSpring({
@@ -27,6 +27,12 @@ const ScrollDownButton: React.FC<IButton> = ({
     },
   });
 
+  const scrollToAbout = () => {
+    const sectionAbout = document.getElementById('about');
+    console.log('ss');
+    sectionAbout?.scrollIntoView();
+  };
+
   return (
     <Button
       variant={variant}
@@ -34,7 +40,8 @@ const ScrollDownButton: React.FC<IButton> = ({
       w-h="9"
       w-p="0"
       w-overflow="hidden"
-      w-transition="background-color duration-400"
+      w-transition="background-color duration-500"
+      onClick={scrollToAbout}
     >
       <animated.div style={props}>
         <KeyboardArrowDownIcon w-text="xl" />
@@ -43,4 +50,4 @@ const ScrollDownButton: React.FC<IButton> = ({
   );
 };
 
-export default ScrollDownButton;
+export default ButtonScrollDown;

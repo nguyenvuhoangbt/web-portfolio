@@ -9,13 +9,20 @@ import useTranslation from '@/src/hooks/useTranslation';
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
 const Header: React.FC<IHeader> = ({ ...headerProps }) => {
-  const { isOpenMenu, setIsOpenMenu } = useContext(NavigationContext);
+  const { isOpenMenu, setIsOpenMenu, isShadowHeader } =
+    useContext(NavigationContext);
   const lang = useTranslation();
 
   return (
     <header
       {...headerProps}
-      className={`fixed w-full p-4 top-0 left-0 bg-[var(--body-color)] z-fixed transition-shadow duration-400`}
+      w-pos="fixed top-0 left-0"
+      w-w="full"
+      w-p="4"
+      w-z="fixed"
+      w-transition="shadow duration-500"
+      w-bg="body"
+      w-shadow={isShadowHeader ? `md gray-300` : undefined}
     >
       <nav className="relative h-[var(--header-height)] flex justify-between items-center">
         <Link
@@ -30,7 +37,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
         </Link>
 
         <div
-          className={`fixed z-fixed left-0 bg-black bg-opacity-75 pt-7 pb-20 w-full text-center backdrop-filter backdrop-blur-2 transition-top duration-400 ${
+          className={`fixed z-fixed left-0 bg-[black] bg-opacity-75 pt-7 pb-20 w-full text-center backdrop-filter backdrop-blur-2 transition-top duration-500 ${
             isOpenMenu ? 'top-0' : '-top-full'
           }`}
           id="nav-menu"
@@ -39,7 +46,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             Menu
           </span>
 
-          <h3
+          <span
             w-w="max"
             w-pos="relative"
             w-text="xl $white-color"
@@ -48,14 +55,14 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             w-after="content-DEFAULT w-10 h-px bg-[var(--text-color-light)] absolute top-1/2 -left-16"
           >
             Hector
-          </h3>
+          </span>
 
           <ul className="flex flex-col gap-y-10">
             <li>
               <Link
                 href="/"
-                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
-                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-500 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
               >
                 Home
               </Link>
@@ -63,8 +70,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             <li>
               <Link
                 href="/"
-                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
-                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-500 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
               >
                 About me
               </Link>
@@ -72,8 +79,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             <li>
               <Link
                 href="/"
-                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
-                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-500 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
               >
                 Projects
               </Link>
@@ -81,8 +88,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             <li>
               <Link
                 href="/"
-                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-300 hover:text-[var(--white-color)]`}
-                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-300 hover:(w-1/4)"
+                className={`relative text-[var(--text-color-light)] text-lg font-semibold transition-color duration-500 hover:text-[var(--white-color)]`}
+                w-after="content-DEFAULT w-0 h-2px bg-[var(--white-color)] absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
               >
                 Contact me
               </Link>

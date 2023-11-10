@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Header from '@/src/components/navigation/Header';
 import useTranslation from '@/src/hooks/useTranslation';
 import { Raleway } from 'next/font/google';
+import { useContext, useEffect } from 'react';
+import NavigationContext from '@/src/state/navigation/NavigationContext';
 
 const font = Raleway({ weight: ['600', '700'], subsets: ['latin'] });
 
@@ -12,9 +14,23 @@ export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
 const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   children,
   justify = 'items-center',
-  ...divProps
 }) => {
   const lang = useTranslation();
+  const { isShadowHeader, setIsShadowHeader } = useContext(NavigationContext);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      !isShadowHeader && setIsShadowHeader(true);
+    }
+    if (window.scrollY <= 0) {
+      isShadowHeader && setIsShadowHeader(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window?.removeEventListener('scroll', handleScroll);
+  });
 
   return (
     <>
@@ -26,10 +42,10 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
       <Head>
         <title>{`${lang.author.name} | Portfolio`}</title>
       </Head>
-      <div {...divProps} className={`h-screen flex flex-col ${justify}`}>
-        <Header />
+      <Header />
+      <main id="main" w-flex="~ col" className={`${justify}`}>
         {children}
-      </div>
+      </main>
     </>
   );
 };

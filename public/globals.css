@@ -59,10 +59,16 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  /* for fix header height 88px */
+  scroll-margin-top: 88px;
 }
 
 html {
   scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 body {

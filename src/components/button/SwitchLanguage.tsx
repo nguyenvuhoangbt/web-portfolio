@@ -4,7 +4,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useRouter } from 'next/router';
 import { styled } from '@mui/material';
 
-const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+const ButtonGroupStyledToggle = styled(ToggleButtonGroup)(({ theme }) => ({
   '& .MuiToggleButtonGroup-grouped': {
     border: 0,
     '&:not(:first-of-type)': {
@@ -16,7 +16,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   },
 }));
 
-const SwitchLanguageButton = () => {
+const ButtonSwitchLanguage = () => {
   const router = useRouter();
 
   const [lang, setLang] = React.useState<string | null>(
@@ -34,7 +34,7 @@ const SwitchLanguageButton = () => {
   };
 
   return (
-    <StyledToggleButtonGroup
+    <ButtonGroupStyledToggle
       size="small"
       value={lang}
       exclusive
@@ -51,8 +51,8 @@ const SwitchLanguageButton = () => {
       <ToggleButton value="zh" aria-label="zh" w-w="10">
         zh
       </ToggleButton>
-    </StyledToggleButtonGroup>
+    </ButtonGroupStyledToggle>
   );
 };
 
-export default SwitchLanguageButton;
+export default ButtonSwitchLanguage;

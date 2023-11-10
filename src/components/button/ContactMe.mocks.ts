@@ -4,6 +4,6 @@ const base: IButton = {
   variant: 'contained',
 };
 
-export const mockButtonScrollDownProps = {
+export const mockContactMeButtonProps = {
   base,
 };
