@@ -1,7 +1,4 @@
-// Assets
-
-//Components
-
+// Consts
 import { LangType } from '@/src/pages/app';
 
 const SectionService: React.FC<{ lang: LangType }> = ({ lang }) => {
@@ -32,7 +29,6 @@ const SectionService: React.FC<{ lang: LangType }> = ({ lang }) => {
             ></div>
 
             <div
-              className="wrapper"
               w-h="full"
               w-bg="light-200"
               w-border="4 solid black"
@@ -64,7 +60,6 @@ const SectionService: React.FC<{ lang: LangType }> = ({ lang }) => {
             ></div>
 
             <div
-              className="wrapper"
               w-h="full"
               w-bg="light-200"
               w-border="4 solid black"
@@ -96,7 +91,6 @@ const SectionService: React.FC<{ lang: LangType }> = ({ lang }) => {
             ></div>
 
             <div
-              className="wrapper"
               w-h="full"
               w-bg="light-200"
               w-border="4 solid black"

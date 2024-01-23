@@ -24,7 +24,7 @@ const ButtonSwitchLanguage = () => {
   );
 
   const handleChangeLang = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     newLang: 'en' | 'vi' | 'zh' | null
   ) => {
     if (newLang !== null) {

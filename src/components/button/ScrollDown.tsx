@@ -1,11 +1,11 @@
-import { IButton } from './IButton';
+import { MyButtonProps } from './MyButton';
 import { Button } from '@mui/material';
 import { useSpring, animated } from '@react-spring/web';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const ButtonScrollDown: React.FC<IButton> = ({
+const ButtonScrollDown: React.FC<MyButtonProps> = ({
   variant = 'contained',
-}: IButton) => {
+}: MyButtonProps) => {
   const props = useSpring({
     from: {
       y: -16,

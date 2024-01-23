@@ -1,6 +1,6 @@
 // Assets
 import HomePerfil from '@/assets/img/home-perfil.jpg';
-import HomeArrow from '@/assets/svg/curved-arrow.svg';
+import CurvedArrow from '@/assets/svg/curved-arrow.svg';
 import RandomLines from '@/assets/svg/random-lines.svg';
 
 // Icons
@@ -8,10 +8,13 @@ import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-//Components
+// Consts
+import { LangType } from '@/src/pages/app';
+
+// Components
 import ButtonScrollDown from '@/components/button/ScrollDown';
 
-import { LangType } from '@/src/pages/app';
+// Libraries
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -44,10 +47,10 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               />
             </div>
 
-            <HomeArrow
+            <CurvedArrow
               w-pos="absolute left-1/4 -bottom-15"
               w-filter="~ invert-100"
-            ></HomeArrow>
+            />
             <RandomLines
               w-pos="absolute -right-6 top-1/8"
               w-filter="~ invert-100"
@@ -61,7 +64,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               w-bg="yellow-400"
               w-pos="absolute bottom-10 -left-2"
               w-transform="~ -rotate-30"
-              w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-[var(--black-color)] -left-5px"
+              w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-5px"
             />
 
             <div

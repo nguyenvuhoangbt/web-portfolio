@@ -1,5 +1,5 @@
 import SwitchLanguageButton from './SwitchLanguage';
-import { IButton } from './IButton';
+import { MyButtonProps } from './MyButton';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
 import { mockSwitchLanguageButtonProps } from './SwitchLanguage.mocks';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -25,7 +25,7 @@ export const Base = Template.bind({});
 
 Base.args = {
   ...mockSwitchLanguageButtonProps.base,
-} as IButton;
+} as MyButtonProps;
 
 // type Story = StoryObj<typeof meta>;
 

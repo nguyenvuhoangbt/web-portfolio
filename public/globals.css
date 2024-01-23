@@ -100,6 +100,32 @@ img {
   height: auto;
 }
 
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px black inset;
+  box-shadow: 0 0 0px 1000px black inset;
+}
+
+input + label,
+textarea + label {
+  transition-duration: 300ms;
+}
+
+input:focus + label,
+textarea:focus + label {
+  transform: translateY(-2rem);
+  color: var(--white-color);
+}
+
 /*=============== THEME ===============*/
 
 /*========== Variables Dark theme ==========*/
@@ -110,64 +136,3 @@ img {
 ==========*/
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.section {
-  padding-block: 4rem 2rem;
-}
-
-.section__title-1,
-.section__title-2 {
-  position: relative;
-  font-size: var(--h1-font-size);
-  width: max-content;
-  margin: 0.75rem auto 2rem;
-}
-
-.section__title-1 span,
-.section__title-2 span {
-  z-index: 5;
-  position: relative;
-}
-
-.section__title-1::after,
-.section__title-2::after {
-  content: '';
-  width: 40px;
-  height: 28px;
-  background-color: hsla(14, 98%, 50%, 0.2);
-  position: absolute;
-  top: -4px;
-  right: -8px;
-}
-
-.section__title-2::after {
-  top: initial;
-  bottom: -4px;
-}
-
-.geometric-box {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: var(--first-color);
-  rotate: -30deg;
-}
-
-.geometric-box::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 3px solid var(--black-color);
-  left: -5px;
-  top: -5px;
-}

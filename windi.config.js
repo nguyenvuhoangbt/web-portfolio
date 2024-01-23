@@ -1,5 +1,4 @@
 import { defineConfig } from 'windicss/helpers';
-import colors from 'windicss/colors';
 import filters from 'windicss/plugin/filters';
 import aspect from 'windicss/plugin/aspect-ratio';
 import scrollSnapPlugin from 'windicss/plugin/scroll-snap';

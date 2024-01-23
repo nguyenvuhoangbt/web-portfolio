@@ -1,8 +1,9 @@
-import { Button } from '@mui/material';
-import React, { FC } from 'react';
+// Libraries
 import * as Icons from '@mui/icons-material';
+import React, { FC } from 'react';
+import { Button, ButtonProps } from '@mui/material';
 
-export interface IButton extends React.ComponentPropsWithoutRef<'button'> {
+export interface MyButtonProps extends ButtonProps {
   variant?: 'text' | 'outlined' | 'contained';
   icon?: string;
   text?: string;
@@ -18,19 +19,20 @@ const IconComponent: FC<IconProps> = ({ iconName, className }) => {
   return <Icon className={className} />;
 };
 
-const ButtonView: React.FC<IButton> = ({
+const MyButton: React.FC<MyButtonProps> = ({
   variant = 'contained',
   icon,
   text,
-}: IButton) => {
+  ...props
+}: MyButtonProps) => {
   return (
-    <Button variant={variant} className="font-inherit" w-bg="black">
+    <Button variant={variant} w-font="inherit" w-min-w="0" {...props}>
       <div w-flex="~" w-gap="2" w-items="center">
         {icon && (
           <IconComponent
             iconName={icon as keyof typeof Icons}
             className="text-normal"
-          ></IconComponent>
+          />
         )}
         {text}
       </div>
@@ -38,4 +40,4 @@ const ButtonView: React.FC<IButton> = ({
   );
 };
 
-export default ButtonView;
+export default MyButton;

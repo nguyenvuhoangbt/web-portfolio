@@ -1,11 +1,15 @@
 // Assets
 import AboutPerfil from '@/assets/img/about-perfil.jpg';
 
-//Components
-import ButtonContactMe from '@/components/button/ContactMe';
-
+// Consts
 import { LangType } from '@/src/pages/app';
+
+// Components
+import MyButton from '@/src/components/button/MyButton';
+
+// Libraries
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
@@ -36,14 +40,14 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-bg="yellow-400"
             w-pos="absolute top-20 right-50"
             w-transform="~ rotate-70"
-            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-[var(--black-color)] -left-5px"
+            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-5px"
           />
         </div>
 
         <div w-pos="relative" w-p="l-5">
           <p
             w-m="b-6"
-            w-after="content-DEFAULT w-5 h-2px bg-[var(--title-color)] absolute -left-2 top-15px"
+            w-after="content-DEFAULT w-5 h-2px bg-$title-color absolute -left-2 top-15px"
           >
             <b
               w-pos="relative"
@@ -55,13 +59,15 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
             , {lang.authorDescription}
           </p>
 
-          <p className="about__list">
+          <p>
             <b>My Skills Are:</b> HTML, CSS, JS, React
           </p>
         </div>
 
         <div w-flex="~" w-justify="center" w-gap="2">
-          <ButtonContactMe></ButtonContactMe>
+          <Link href="https://www.linkedin.com/" target="_blank">
+            <MyButton icon="Send" text="Contact Me" />
+          </Link>
         </div>
       </div>
     </section>

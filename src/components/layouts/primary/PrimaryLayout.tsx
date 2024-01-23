@@ -1,9 +1,14 @@
-import Head from 'next/head';
-import Header from '@/src/components/navigation/Header';
+// States & Hooks
+import NavigationContext from '@/src/state/navigation/NavigationContext';
 import useTranslation from '@/src/hooks/useTranslation';
+
+// Components
+import Header from '@/src/components/navigation/Header';
+
+// Libraries
+import Head from 'next/head';
 import { Raleway } from 'next/font/google';
 import { useContext, useEffect } from 'react';
-import NavigationContext from '@/src/state/navigation/NavigationContext';
 
 const font = Raleway({ weight: ['600', '700'], subsets: ['latin'] });
 

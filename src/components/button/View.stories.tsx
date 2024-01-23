@@ -1,5 +1,5 @@
-import ViewButton from './IButton';
-import { IButton } from './IButton';
+import ViewButton from './MyButton';
+import { MyButtonProps } from './MyButton';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
 import { mockViewButtonProps } from './View.mocks';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -25,7 +25,7 @@ export const Base = Template.bind({});
 
 Base.args = {
   ...mockViewButtonProps.base,
-} as IButton;
+} as MyButtonProps;
 
 // type Story = StoryObj<typeof meta>;
 

@@ -1,12 +1,16 @@
-//Components
+// Components
 import PrimaryLayout from '@/components/layouts/primary/PrimaryLayout';
 import SectionWelcome from '@/components/section/Welcome';
 import SectionAbout from '@/components/section/About';
 import SectionService from '@/components/section/Service';
 import SectionProject from '@/components/section/Project';
+import SectionContact from '@/components/section/Contact';
 
-import { NextPageWithLayout } from '@/src/pages/app';
+// States & Hooks
 import useTranslation from '@/src/hooks/useTranslation';
+
+// Libraries
+import { NextPageWithLayout } from '@/src/pages/app';
 
 const Home: NextPageWithLayout = () => {
   const lang = useTranslation();
@@ -26,6 +30,7 @@ const Home: NextPageWithLayout = () => {
       <SectionAbout lang={aboutLang}></SectionAbout>
       <SectionService lang={aboutLang}></SectionService>
       <SectionProject lang={aboutLang}></SectionProject>
+      <SectionContact lang={aboutLang}></SectionContact>
     </>
   );
 };

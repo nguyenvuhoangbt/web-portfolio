@@ -3,14 +3,13 @@ import Project1 from '@/assets/img/project-1.jpg';
 import Project2 from '@/assets/img/project-2.jpg';
 import Project3 from '@/assets/img/project-3.jpg';
 
-//Icons
-import VisibilityIcon from '@mui/icons-material/Visibility';
-
-//Components
-import ButtonIconWithText from '@/src/components/button/IButton';
-
+// Consts
 import { LangType } from '@/src/pages/app';
-import { Button } from '@mui/material';
+
+// Components
+import MyButton from '@/src/components/button/MyButton';
+
+// Libraries
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -30,7 +29,6 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
         <div w-pos="relative" w-justify="self-center" w-grid="~ gap-8">
           <article
             w-pos="relative"
-            className="group"
             w-flex="~ col"
             w-gap="4"
             w-bg="light-200"
@@ -51,26 +49,20 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
               />
             </Link>
 
-            <div className="project__content">
-              <h3 className="project__title" w-text="h3">
-                Website
-              </h3>
-              <p className="project__description">
+            <div>
+              <h3 w-text="h3">Website</h3>
+              <p w-m="b-1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-              <ButtonIconWithText
-                icon="Visibility"
-                text="View"
-              ></ButtonIconWithText>
+              <MyButton icon="Visibility" text="View"></MyButton>
             </div>
           </article>
 
           <article
             w-pos="relative"
-            className="group"
             w-flex="~ col"
             w-gap="4"
             w-bg="light-200"
@@ -91,35 +83,20 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
               />
             </Link>
 
-            <div className="project__content">
-              <h3 className="project__title" w-text="h3">
-                Website
-              </h3>
-              <p className="project__description">
+            <div>
+              <h3 w-text="h3">Website</h3>
+              <p w-m="b-1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-              <div className="project__button">
-                <Link
-                  href="#"
-                  target="_blank"
-                  w-w="max"
-                  w-flex="~"
-                  w-items="center"
-                  w-gap="1"
-                >
-                  <VisibilityIcon w-text="normal"></VisibilityIcon>
-                  <span>View</span>
-                </Link>
-              </div>
+              <MyButton icon="Visibility" text="View"></MyButton>
             </div>
           </article>
 
           <article
             w-pos="relative"
-            className="group"
             w-flex="~ col"
             w-gap="4"
             w-bg="light-200"
@@ -140,29 +117,15 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
               />
             </Link>
 
-            <div className="project__content">
-              <h3 className="project__title" w-text="h3">
-                Website
-              </h3>
-              <p className="project__description">
+            <div>
+              <h3 w-text="h3">Website</h3>
+              <p w-m="b-1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-              <div className="project__button">
-                <Link
-                  href="#"
-                  target="_blank"
-                  w-w="max"
-                  w-flex="~"
-                  w-items="center"
-                  w-gap="1"
-                >
-                  <VisibilityIcon w-text="normal"></VisibilityIcon>
-                  <span>View</span>
-                </Link>
-              </div>
+              <MyButton icon="Visibility" text="View"></MyButton>
             </div>
           </article>
         </div>
