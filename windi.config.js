@@ -17,15 +17,18 @@ export default defineConfig({
     },
     fontSize: {
       biggest: '2rem',
+      h2: '1.5rem',
       h3: '1.25rem',
       normal: '1rem',
-      small: '0.813rem',
+      small: '0.85rem',
       smaller: '0.75rem',
     },
     extend: {
       colors: {
-        container: '#d4d4d4',
-        body: '#dedede',
+        primary: '#FF5841',
+        secondary: '#d2e9e9',
+        black: '#25171A',
+        gray: '#f5f5f5',
       },
       fontFamily: {
         inherit: 'inherit',

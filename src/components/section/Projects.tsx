@@ -15,12 +15,7 @@ import Link from 'next/link';
 
 const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
-    <section
-      id="about"
-      w-p="b-8"
-      w-bg="container"
-      w-transition="colors duration-500"
-    >
+    <section id="projects" w-p="b-8" w-transition="colors duration-500">
       <div w-max-w="1120px" w-p="t-8" w-m="x-6" w-grid="~ gap-6">
         <h2 w-text="center biggest" w-font="bold">
           Projects
@@ -31,9 +26,9 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-pos="relative"
             w-flex="~ col"
             w-gap="4"
-            w-bg="light-200"
+            w-bg="gray"
             w-p="4"
-            w-rounded="md"
+            w-rounded="sm"
           >
             <Link href="#" target="_blank">
               <Image
@@ -42,7 +37,7 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
                 fill={false}
                 w-pos="relative"
                 w-m="auto"
-                w-rounded="md"
+                w-rounded="sm"
                 w-w="full"
                 w-aspect="video"
                 w-object="cover"
@@ -65,9 +60,9 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-pos="relative"
             w-flex="~ col"
             w-gap="4"
-            w-bg="light-200"
+            w-bg="gray"
             w-p="4"
-            w-rounded="md"
+            w-rounded="sm"
           >
             <Link href="#" target="_blank">
               <Image
@@ -76,7 +71,7 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
                 fill={false}
                 w-pos="relative"
                 w-m="auto"
-                w-rounded="md"
+                w-rounded="sm"
                 w-w="full"
                 w-aspect="video"
                 w-object="cover"
@@ -99,9 +94,9 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-pos="relative"
             w-flex="~ col"
             w-gap="4"
-            w-bg="light-200"
+            w-bg="gray"
             w-p="4"
-            w-rounded="md"
+            w-rounded="sm"
           >
             <Link href="#" target="_blank">
               <Image
@@ -110,7 +105,7 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
                 fill={false}
                 w-pos="relative"
                 w-m="auto"
-                w-rounded="md"
+                w-rounded="sm"
                 w-w="full"
                 w-aspect="video"
                 w-object="cover"

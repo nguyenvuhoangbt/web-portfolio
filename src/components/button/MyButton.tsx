@@ -6,6 +6,7 @@ import { Button, ButtonProps } from '@mui/material';
 export interface MyButtonProps extends ButtonProps {
   variant?: 'text' | 'outlined' | 'contained';
   icon?: string;
+  iconSize?: string;
   text?: string;
 }
 
@@ -22,16 +23,24 @@ const IconComponent: FC<IconProps> = ({ iconName, className }) => {
 const MyButton: React.FC<MyButtonProps> = ({
   variant = 'contained',
   icon,
+  iconSize = 'text-normal',
   text,
   ...props
 }: MyButtonProps) => {
   return (
-    <Button variant={variant} w-font="inherit" w-min-w="0" {...props}>
-      <div w-flex="~" w-gap="2" w-items="center">
+    <Button
+      variant={variant}
+      w-font="inherit"
+      w-min-w="0"
+      w-rounded="sm"
+      color="secondary"
+      {...props}
+    >
+      <div w-flex="~" w-gap="2" w-items="center" w-font="bold">
         {icon && (
           <IconComponent
             iconName={icon as keyof typeof Icons}
-            className="text-normal"
+            className={iconSize}
           />
         )}
         {text}

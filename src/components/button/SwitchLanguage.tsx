@@ -8,10 +8,10 @@ const ButtonGroupStyledToggle = styled(ToggleButtonGroup)(({ theme }) => ({
   '& .MuiToggleButtonGroup-grouped': {
     border: 0,
     '&:not(:first-of-type)': {
-      borderRadius: theme.shape.borderRadius,
+      borderRadius: 2,
     },
     '&:first-of-type': {
-      borderRadius: theme.shape.borderRadius,
+      borderRadius: 2,
     },
   },
 }));
@@ -42,14 +42,14 @@ const ButtonSwitchLanguage = () => {
       aria-label="language switch"
       w-h="8"
     >
-      <ToggleButton value="vi" aria-label="vi" w-w="10">
+      {/* <ToggleButton value="vi" aria-label="vi" w-w="10">
         vi
-      </ToggleButton>
+      </ToggleButton> */}
       <ToggleButton value="en" aria-label="en" w-w="10">
         en
       </ToggleButton>
       <ToggleButton value="zh" aria-label="zh" w-w="10">
-        zh
+        中
       </ToggleButton>
     </ButtonGroupStyledToggle>
   );

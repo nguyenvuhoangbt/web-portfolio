@@ -1,5 +1,4 @@
 // Assets
-import Favicon32 from '@/assets/favicon/favicon-32x32.png';
 
 // Icons
 import CloseIcon from '@mui/icons-material/Close';
@@ -14,7 +13,6 @@ import ButtonSwitchLanguage from '@/src/components/button/SwitchLanguage';
 
 // Libraries
 import Link from 'next/link';
-import Image from 'next/image';
 import { useContext } from 'react';
 import { IconButton } from '@mui/material';
 
@@ -33,8 +31,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
       w-p="4"
       w-z="fixed"
       w-transition="shadow duration-500"
-      w-bg="body"
-      w-shadow={isShadowHeader ? `md gray-300` : undefined}
+      w-bg="white"
+      w-shadow={isShadowHeader ? `md neutral-300` : undefined}
     >
       <nav
         w-pos="relative"
@@ -48,11 +46,11 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           w-flex="~"
           w-gap="2"
           w-align="items-center"
-          w-font="semibold"
-          w-text="$title-color"
+          w-font="bold"
         >
-          <Image src={Favicon32} alt="Favicon" />
-          <span w-display="hidden sm:block">{lang.author.name}</span>
+          <span w-display="hidden sm:block" w-text="h3 black">
+            {lang.author.name}
+          </span>
         </Link>
 
         <div
@@ -60,19 +58,14 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           id="nav-menu"
           w-pos="fixed left-0"
           w-z="fixed"
-          w-bg="black opacity-75"
+          w-bg="[black] opacity-75"
           w-p="t-7 b-20"
           w-w="full"
           w-text="center"
           w-backdrop="filter blur-2"
           w-transition="duration-500"
         >
-          <span
-            w-text="$white-color"
-            w-display="block"
-            w-font="semibold"
-            w-m="b-8"
-          >
+          <span w-text="$white-color" w-display="block" w-font="bold" w-m="b-8">
             Menu
           </span>
 
@@ -92,7 +85,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
                 href="/"
                 w-pos="relative"
                 w-text="$text-color-light"
-                w-font="semibold"
+                w-font="bold"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
                 w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
@@ -105,7 +98,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
                 href="/"
                 w-pos="relative"
                 w-text="$text-color-light"
-                w-font="semibold"
+                w-font="bold"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
                 w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
@@ -118,7 +111,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
                 href="/"
                 w-pos="relative"
                 w-text="$text-color-light"
-                w-font="semibold"
+                w-font="bold"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
                 w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
@@ -131,7 +124,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
                 href="/"
                 w-pos="relative"
                 w-text="$text-color-light"
-                w-font="semibold"
+                w-font="bold"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
                 w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"

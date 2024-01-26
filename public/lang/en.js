@@ -1,5 +1,5 @@
 const messages = {
-  welcome: 'Hi there, welcome to my website.',
+  welcome: 'Hi there, welcome to my website',
   author: {
     name: 'Hector Nguyen',
     description:

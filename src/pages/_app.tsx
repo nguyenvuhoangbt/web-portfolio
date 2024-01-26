@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <StrictMode>
       <StyledEngineProvider injectFirst>
-        <Provider>{getLayout(<Component {...pageProps} />)}</Provider>;
+        <Provider>{getLayout(<Component {...pageProps} />)}</Provider>
       </StyledEngineProvider>
     </StrictMode>
   );

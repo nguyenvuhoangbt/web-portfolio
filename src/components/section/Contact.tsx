@@ -38,28 +38,28 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
       <div w-w="full" w-p="t-8" w-pos="relative" w-max-w="1168px" w-m="x-auto">
         <div
           w-pos="relative"
-          w-bg="container"
           w-p="t-12 x-6 b-14"
           w-flex="~ col"
           w-gap="4"
           w-w="300px"
           w-m="l-auto"
           w-z="1"
+          w-bg="secondary"
         >
           <h2
             w-text="center biggest"
             w-font="bold"
-            w-transform="~ -translate-x-22"
+            w-transform="~ -translate-x-24"
           >
             Contact me
           </h2>
 
-          <p w-font="semi-bold" w-text="$title-color">
+          <p w-font="semi-bold">
             I will read all emails. Send me any message you want and I will get
             back to you.
           </p>
 
-          <p w-text="smaller">
+          <p w-text="small">
             I need your <b>Name</b> and <b>Email address</b>, but you will not
             receive anything other than your reply.
           </p>
@@ -67,35 +67,33 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
           <div
             w-w="5"
             w-h="5"
-            w-bg="yellow-400"
+            w-bg="primary"
             w-pos="absolute top-10 right-5"
             w-transform="~ rotate-120"
-            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-1 bottom-2"
+            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-6px bottom-10px"
           />
         </div>
 
         <div
           w-w="full"
           w-pos="relative"
-          w-bg="black"
+          w-bg="gray"
           w-p="t-20 x-6 b-10"
           w-m="-t-20"
         >
-          <h3 w-text="center h3 white" w-font="bold" w-m="t-6 b-4">
+          <h3 w-text="center h3" w-font="bold" w-m="t-6 b-4">
             Send me a message
           </h3>
 
           <form
             action=""
-            className="contact__form"
             id="contact__form"
             w-grid="~"
             w-gap="y-[1.25rem]"
             w-pos="relative"
           >
-            <div className="contact__group" w-grid="~" w-gap="y-[1.25rem]">
+            <div w-grid="~" w-gap="y-[1.25rem]">
               <div
-                className="contact__box"
                 w-pos="relative"
                 w-w="full"
                 w-h="15"
@@ -106,7 +104,6 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   type="text"
                   name="first-name"
                   autoComplete="first-name"
-                  className="contact__input"
                   required
                   maxLength={50}
                   value={form.firstName}
@@ -120,19 +117,17 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   w-pos="absolute"
                   w-w="full"
                   w-h="full"
-                  w-bg="black"
-                  w-text="white"
+                  w-bg="gray"
                   w-p="4"
                   w-font="medium"
                 />
                 <label
                   htmlFor="name"
-                  className="contact__label"
-                  w-pos="absolute top-3 left-10px"
-                  w-text="$text-color-light small"
+                  w-pos="absolute top-18px left-10px"
+                  w-text="$black-color-light small"
                   w-font="medium"
-                  w-bg="black"
-                  w-p="2"
+                  w-bg="gray"
+                  w-p="x-2"
                   w-pointer="none"
                   w-transform={form.firstName.length && '~ -translate-y-2rem'}
                 >
@@ -140,7 +135,6 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 </label>
               </div>
               <div
-                className="contact__box"
                 w-pos="relative"
                 w-w="full"
                 w-h="15"
@@ -151,7 +145,6 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   type="email"
                   name="email"
                   autoComplete="email"
-                  className="contact__input"
                   required
                   maxLength={100}
                   value={form.email}
@@ -165,19 +158,17 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   w-pos="absolute"
                   w-w="full"
                   w-h="full"
-                  w-bg="black"
-                  w-text="white"
+                  w-bg="gray"
                   w-p="4"
                   w-font="medium"
                 />
                 <label
                   htmlFor="email"
-                  className="contact__label"
-                  w-pos="absolute top-3 left-10px"
-                  w-text="$text-color-light small"
+                  w-pos="absolute top-18px left-10px"
+                  w-text="$black-color-light small"
                   w-font="medium"
-                  w-bg="black"
-                  w-p="2"
+                  w-bg="gray"
+                  w-p="x-2"
                   w-pointer="none"
                   w-transform={form.email.length && '~ -translate-y-2rem'}
                 >
@@ -185,18 +176,17 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 </label>
               </div>
               <div
-                className="contact__box contact__area"
                 w-w="full"
                 w-outline="none"
                 w-pos="relative"
-                w-bg="black"
+                w-bg="gray"
                 w-p="4"
                 w-border="~ 2 rounded-sm $black-color-light"
               >
                 <TextareaAutosize
                   name="user__message"
                   id="message"
-                  className="contact__input resize-none"
+                  className="resize-none"
                   required
                   value={form.message}
                   onChange={(event) => {
@@ -211,24 +201,22 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   w-outline="none"
                   w-w="full"
                   w-h="full"
-                  w-bg="black"
-                  w-text="white"
+                  w-bg="gray"
                   w-font="medium"
                 />
                 <label
                   htmlFor="message"
-                  className="contact__label"
-                  w-pos="absolute top-3 left-10px"
-                  w-text="$text-color-light small"
+                  w-pos="absolute top-18px left-10px"
+                  w-text="$black-color-light small"
                   w-font="medium"
-                  w-bg="black"
-                  w-p="2"
+                  w-bg="gray"
+                  w-p="x-2"
                   w-pointer="none"
                   w-transform={form.message.length && '~ -translate-y-2rem'}
                 >
                   Message
                 </label>
-                <span w-float="right" w-text="small">
+                <span w-float="right" w-text="small $black-color-light">
                   {`${form.message.length} / ${maxMessageLength}`}
                 </span>
               </div>
@@ -236,10 +224,8 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 type="submit"
                 icon="Send"
                 text="Send Message"
-                w-bg="yellow-400"
-                w-text="black"
+                w-bg="primary"
                 w-rounded="sm"
-                w-hover="bg-yellow-400"
               />
             </div>
           </form>
@@ -251,33 +237,14 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
           w-transform="~ scale-60 rotate-30"
         />
 
-        <div
-          className="contact__social"
-          w-pos="relative"
-          w-grid="~"
-          w-gap="y-4"
-        >
-          <div
-            className="contact__social--data"
-            w-text="center"
-            w-grid="~"
-            w-gap="2"
-          >
+        <div w-pos="relative" w-grid="~" w-gap="y-4">
+          <div w-text="center" w-grid="~" w-gap="2">
             <div>
-              <p className="contact__social-description-1">
-                Does not sent emails
-              </p>
-              <p className="contact__social-description-2" w-font="bold">
-                Write me on my social networks
-              </p>
+              <p>Does not sent emails</p>
+              <p w-font="bold">Write me on my social networks</p>
             </div>
 
-            <div
-              className="contact__social-links"
-              w-flex="~"
-              w-gap="3"
-              w-justify="center"
-            >
+            <div w-flex="~" w-gap="3" w-justify="center">
               <Link
                 href="https://www.linkedin.com/"
                 w-items="center"

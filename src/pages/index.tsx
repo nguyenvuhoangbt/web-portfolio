@@ -2,8 +2,8 @@
 import PrimaryLayout from '@/components/layouts/primary/PrimaryLayout';
 import SectionWelcome from '@/components/section/Welcome';
 import SectionAbout from '@/components/section/About';
-import SectionService from '@/components/section/Service';
-import SectionProject from '@/components/section/Project';
+import SectionServices from '@/src/components/section/Services';
+import SectionProjects from '@/src/components/section/Projects';
 import SectionContact from '@/components/section/Contact';
 
 // States & Hooks
@@ -28,8 +28,8 @@ const Home: NextPageWithLayout = () => {
     <>
       <SectionWelcome lang={homeLang}></SectionWelcome>
       <SectionAbout lang={aboutLang}></SectionAbout>
-      <SectionService lang={aboutLang}></SectionService>
-      <SectionProject lang={aboutLang}></SectionProject>
+      <SectionServices lang={aboutLang}></SectionServices>
+      <SectionProjects lang={aboutLang}></SectionProjects>
       <SectionContact lang={aboutLang}></SectionContact>
     </>
   );

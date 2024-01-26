@@ -1,5 +1,5 @@
 const messages = {
-  welcome: '你好，欢迎来到我的网站。',
+  welcome: '你好，欢迎来到我的网站',
   author: {
     name: '阮武黄',
     description:

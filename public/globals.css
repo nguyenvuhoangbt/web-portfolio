@@ -66,23 +66,34 @@
 
 html {
   scroll-behavior: smooth;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 65%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 55%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 45%);
 }
 
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
+  /* background-color: var(--body-color); */
+  /* color: var(--text-color); */
 }
 
 h1,
 h2,
 h3,
 h4 {
-  color: var(--title-color);
   font-weight: var(--font-bold);
 }
 
@@ -110,20 +121,24 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px black inset;
-  box-shadow: 0 0 0px 1000px black inset;
+  -webkit-text-fill-color: #25171a;
+  -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset;
+  box-shadow: 0 0 0px 1000px #f5f5f5 inset;
 }
 
 input + label,
 textarea + label {
-  transition-duration: 300ms;
+  transition-duration: 400ms;
 }
 
 input:focus + label,
 textarea:focus + label {
   transform: translateY(-2rem);
-  color: var(--white-color);
+  /* color: var(--white-color); */
+}
+
+textarea {
+  font-size: var(--normal-font-size);
 }
 
 /*=============== THEME ===============*/
