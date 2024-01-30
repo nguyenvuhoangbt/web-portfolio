@@ -33,7 +33,6 @@ const MyButton: React.FC<MyButtonProps> = ({
       w-font="inherit"
       w-min-w="0"
       w-rounded="sm"
-      color="secondary"
       {...props}
     >
       <div w-flex="~" w-gap="2" w-items="center" w-font="bold">

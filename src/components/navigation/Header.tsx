@@ -2,6 +2,7 @@
 
 // Icons
 import CloseIcon from '@mui/icons-material/Close';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
 
 // States & Hooks
 import NavigationContext from '@/src/state/navigation/NavigationContext';
@@ -10,6 +11,7 @@ import useTranslation from '@/src/hooks/useTranslation';
 // Components
 import ButtonMenu from '@/src/components/button/Menu';
 import ButtonSwitchLanguage from '@/src/components/button/SwitchLanguage';
+import DarkModeToggle from '@/src/components/button/DarkModeToggle';
 
 // Libraries
 import Link from 'next/link';
@@ -30,9 +32,9 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
       w-w="full"
       w-p="4"
       w-z="fixed"
-      w-transition="shadow duration-500"
-      w-bg="white"
-      w-shadow={isShadowHeader ? `md neutral-300` : undefined}
+      w-transition="shadow duration-300"
+      w-bg="white dark:black"
+      w-shadow={isShadowHeader ? `sm neutral-300` : undefined}
     >
       <nav
         w-pos="relative"
@@ -48,9 +50,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           w-align="items-center"
           w-font="bold"
         >
-          <span w-display="hidden sm:block" w-text="h3 black">
-            {lang.author.name}
-          </span>
+          <span w-text="normal black sm:h3 dark:white">{lang.author.name}</span>
         </Link>
 
         <div
@@ -58,7 +58,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           id="nav-menu"
           w-pos="fixed left-0"
           w-z="fixed"
-          w-bg="[black] opacity-75"
+          w-bg="opacity-75 black dark:opacity-95"
           w-p="t-7 b-20"
           w-w="full"
           w-text="center"
@@ -79,55 +79,98 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             Hector
           </span>
 
-          <ul w-flex="~ col" w-gap="y-10" w-m="t-8">
-            <li>
+          <ul w-flex="~ col" w-gap="y-2" w-m="t-8">
+            <li
+              w-flex="~"
+              w-m="x-auto"
+              w-w="max-content"
+              w-pos="relative"
+              w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4)"
+            >
               <Link
-                href="/"
-                w-pos="relative"
+                href="/#"
                 w-text="$text-color-light"
                 w-font="bold"
+                w-p="4"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
+                onClick={() => setIsOpenMenu(false)}
               >
                 Home
               </Link>
             </li>
-            <li>
+            <li
+              w-flex="~"
+              w-m="x-auto"
+              w-w="max-content"
+              w-pos="relative"
+              w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4)"
+            >
               <Link
-                href="/"
-                w-pos="relative"
+                href="/#about"
                 w-text="$text-color-light"
                 w-font="bold"
+                w-p="4"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
+                onClick={() => setIsOpenMenu(false)}
               >
                 About me
               </Link>
             </li>
-            <li>
+            <li
+              w-flex="~"
+              w-m="x-auto"
+              w-w="max-content"
+              w-pos="relative"
+              w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4)"
+            >
               <Link
-                href="/"
-                w-pos="relative"
+                href="/#services"
                 w-text="$text-color-light"
                 w-font="bold"
+                w-p="4"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
+                onClick={() => setIsOpenMenu(false)}
+              >
+                Services
+              </Link>
+            </li>
+            <li
+              w-flex="~"
+              w-m="x-auto"
+              w-w="max-content"
+              w-pos="relative"
+              w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4)"
+            >
+              <Link
+                href="/#projects"
+                w-text="$text-color-light"
+                w-font="bold"
+                w-p="4"
+                w-transition="colors duration-500"
+                w-hover="text-$white-color"
+                onClick={() => setIsOpenMenu(false)}
               >
                 Projects
               </Link>
             </li>
-            <li>
+            <li
+              w-flex="~"
+              w-m="x-auto"
+              w-w="max-content"
+              w-pos="relative"
+              w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4)"
+            >
               <Link
-                href="/"
-                w-pos="relative"
+                href="/#contact"
                 w-text="$text-color-light"
                 w-font="bold"
+                w-p="4"
                 w-transition="colors duration-500"
                 w-hover="text-$white-color"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-0 -bottom-2 transition-width duration-500 hover:(w-1/4)"
+                onClick={() => setIsOpenMenu(false)}
               >
                 Contact me
               </Link>
@@ -148,7 +191,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           </IconButton>
         </div>
 
-        <div w-flex="~" w-gap="4">
+        <div w-flex="~" w-align="items-center" w-gap="4">
+          <DarkModeToggle></DarkModeToggle>
           <ButtonSwitchLanguage></ButtonSwitchLanguage>
           <ButtonMenu></ButtonMenu>
         </div>

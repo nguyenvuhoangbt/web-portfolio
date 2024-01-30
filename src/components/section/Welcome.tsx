@@ -21,18 +21,18 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
     <section w-p="t-20 b-8" id="home">
       <div w-max-w="1120px" w-p="t-8" w-m="x-6" w-grid="~ gap-6">
-        <h1 className="text-biggest" w-text="center black" w-font="bold">
+        <h1 w-text="center biggest" w-font="bold">
           {lang.welcome}
         </h1>
 
-        <div w-pos="relative" w-justify="self-center">
+        <div w-justify="self-center">
           <div w-pos="relative">
             <div
-              w-border="4 solid black"
+              w-border="4 solid"
               w-rounded="sm"
               w-aspect="1/3"
               w-p="t-3 x-3"
-              w-bg="[white]"
+              w-bg="white dark:black"
               w-z="1"
             >
               <Image
@@ -46,10 +46,10 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               />
             </div>
             <RandomLines
-              w-pos="absolute -right-6 top-1/8"
-              w-filter="~ invert-100"
-              w-z="-1"
-            ></RandomLines>
+              w-pos="absolute right-0 top-0"
+              w-transform="~ scale-50 translate-x-19"
+              w-fill="dark:white"
+            />
 
             <div
               w-w="5"
@@ -58,7 +58,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               w-bg="primary"
               w-pos="absolute bottom-10 -left-2"
               w-transform="~ -rotate-30"
-              w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-5px"
+              w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid -left-6px bottom-10px"
             />
 
             <div
@@ -73,7 +73,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
                 target="_blank"
                 w-flex="~"
                 w-items="center"
-                w-text="smaller black"
+                w-text="smaller"
               >
                 <span w-m="r-1">linkedin.com/in/nguyenvuhoangbt</span>
                 <LinkedInIcon></LinkedInIcon>
@@ -83,7 +83,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
                 target="_blank"
                 w-flex="~"
                 w-items="center"
-                w-text="smaller black"
+                w-text="smaller"
               >
                 <span w-m="r-1">github.com/in/nguyenvuhoangbt</span>
                 <GitHubIcon></GitHubIcon>
@@ -91,7 +91,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               <Link
                 href="mailto:nguyenvuhoangbt@gmail.com"
                 target="_blank"
-                w-text="smaller black"
+                w-text="smaller"
                 w-flex="~"
                 w-items="center"
               >

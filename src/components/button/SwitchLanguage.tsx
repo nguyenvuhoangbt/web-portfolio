@@ -5,15 +5,15 @@ import { useRouter } from 'next/router';
 import { styled } from '@mui/material';
 
 const ButtonGroupStyledToggle = styled(ToggleButtonGroup)(({ theme }) => ({
-  '& .MuiToggleButtonGroup-grouped': {
-    border: 0,
-    '&:not(:first-of-type)': {
-      borderRadius: 2,
-    },
-    '&:first-of-type': {
-      borderRadius: 2,
-    },
-  },
+  // '& .MuiToggleButtonGroup-grouped': {
+  //   border: 0,
+  //   '&:not(:first-of-type)': {
+  //     borderRadius: 2,
+  //   },
+  //   '&:first-of-type': {
+  //     borderRadius: 2,
+  //   },
+  // },
 }));
 
 const ButtonSwitchLanguage = () => {
@@ -45,10 +45,22 @@ const ButtonSwitchLanguage = () => {
       {/* <ToggleButton value="vi" aria-label="vi" w-w="10">
         vi
       </ToggleButton> */}
-      <ToggleButton value="en" aria-label="en" w-w="10">
+      <ToggleButton
+        value="en"
+        aria-label="en"
+        w-w="10"
+        w-text="dark:white"
+        w-hover="dark:bg-[#ffffff1a]"
+      >
         en
       </ToggleButton>
-      <ToggleButton value="zh" aria-label="zh" w-w="10">
+      <ToggleButton
+        value="zh"
+        aria-label="zh"
+        w-w="10"
+        w-text="dark:white"
+        w-hover="dark:bg-[#ffffff1a]"
+      >
         中
       </ToggleButton>
     </ButtonGroupStyledToggle>

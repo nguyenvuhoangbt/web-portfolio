@@ -13,9 +13,9 @@ import Link from 'next/link';
 
 const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
-    <section id="about" w-p="b-8" w-transition="colors duration-500">
+    <section id="about" w-p="b-8">
       <div w-max-w="1120px" w-p="t-8" w-m="x-6" w-grid="~ gap-6">
-        <h2 w-text="center biggest black" w-font="bold">
+        <h2 w-text="center biggest" w-font="bold">
           About me
         </h2>
 
@@ -35,7 +35,7 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-bg="primary"
             w-pos="absolute top-20 right-50"
             w-transform="~ rotate-70"
-            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-5px"
+            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-6px -top-6px"
           />
         </div>
 
@@ -44,7 +44,7 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-m="b-6"
             w-after="content-DEFAULT w-5 h-2px absolute -left-2 top-15px"
           >
-            <b w-pos="relative" w-text="h3 black">
+            <b w-pos="relative" w-text="h3">
               Frontend Developer
             </b>
             , {lang.authorDescription}

@@ -1,35 +1,33 @@
 import { MyButtonProps } from './MyButton';
 import { Button } from '@mui/material';
-import { useSpring, animated } from '@react-spring/web';
+import { useSpring, animated, config, easings } from '@react-spring/web';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const ButtonScrollDown: React.FC<MyButtonProps> = ({
   variant = 'contained',
 }: MyButtonProps) => {
   const props = useSpring({
-    from: {
-      y: -16,
-      opacity: 0,
-    },
     to: [
       {
-        y: 0,
-        opacity: 1,
+        y: -5,
       },
       {
-        y: 10,
-        opacity: 0,
+        y: 5,
+      },
+      {
+        y: 0,
       },
     ],
     loop: true,
     config: {
-      tension: 75,
+      duration: 200,
+      // tension: 100,
+      // easing: easings.easeInOutQuart,
     },
   });
 
   const scrollToAbout = () => {
     const sectionAbout = document.getElementById('about');
-    console.log('ss');
     sectionAbout?.scrollIntoView();
   };
 

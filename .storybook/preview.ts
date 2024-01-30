@@ -1,15 +1,15 @@
 import type { Preview } from '@storybook/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { theme } from '../src/theme/MyTheme';
+// import { Theme } from '../src/theme/MyTheme';
 import '@/public/globals.css';
 
 export const decorators = [
   withThemeFromJSXProvider({
-    themes: {
-      myTheme: theme,
-    },
-    defaultTheme: 'myTheme',
+    // themes: {
+    //   myTheme: Theme,
+    // },
+    // defaultTheme: 'myTheme',
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
   }),

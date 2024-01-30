@@ -12,6 +12,9 @@ import useTranslation from '@/src/hooks/useTranslation';
 // Libraries
 import { NextPageWithLayout } from '@/src/pages/app';
 
+// States & Hooks
+import InViewAnimation from '@/src/hooks/useInViewAnimation';
+
 const Home: NextPageWithLayout = () => {
   const lang = useTranslation();
   const homeLang = {
@@ -27,10 +30,18 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <SectionWelcome lang={homeLang}></SectionWelcome>
-      <SectionAbout lang={aboutLang}></SectionAbout>
-      <SectionServices lang={aboutLang}></SectionServices>
-      <SectionProjects lang={aboutLang}></SectionProjects>
-      <SectionContact lang={aboutLang}></SectionContact>
+      <InViewAnimation>
+        <SectionAbout lang={aboutLang}></SectionAbout>
+      </InViewAnimation>
+      <InViewAnimation>
+        <SectionServices lang={aboutLang}></SectionServices>
+      </InViewAnimation>
+      <InViewAnimation>
+        <SectionProjects lang={aboutLang}></SectionProjects>
+      </InViewAnimation>
+      <InViewAnimation>
+        <SectionContact lang={aboutLang}></SectionContact>
+      </InViewAnimation>
     </>
   );
 };

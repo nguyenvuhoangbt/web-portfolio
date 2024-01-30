@@ -15,7 +15,7 @@ import Link from 'next/link';
 
 const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
-    <section id="projects" w-p="b-8" w-transition="colors duration-500">
+    <section id="projects" w-p="b-8">
       <div w-max-w="1120px" w-p="t-8" w-m="x-6" w-grid="~ gap-6">
         <h2 w-text="center biggest" w-font="bold">
           Projects
@@ -26,7 +26,7 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-pos="relative"
             w-flex="~ col"
             w-gap="4"
-            w-bg="gray"
+            w-border="solid 4"
             w-p="4"
             w-rounded="sm"
           >
@@ -43,10 +43,11 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-object="cover"
               />
             </Link>
-
             <div>
-              <h3 w-text="h3">Website</h3>
-              <p w-m="b-1">
+              <h3 w-text="h3" w-font="bold">
+                Website
+              </h3>
+              <p w-m="b-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -54,13 +55,12 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
               </p>
               <MyButton icon="Visibility" text="View"></MyButton>
             </div>
-          </article>
-
+          </article>{' '}
           <article
             w-pos="relative"
             w-flex="~ col"
             w-gap="4"
-            w-bg="gray"
+            w-border="solid 4"
             w-p="4"
             w-rounded="sm"
           >
@@ -77,10 +77,11 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-object="cover"
               />
             </Link>
-
             <div>
-              <h3 w-text="h3">Website</h3>
-              <p w-m="b-1">
+              <h3 w-text="h3" w-font="bold">
+                Website
+              </h3>
+              <p w-m="b-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -88,13 +89,12 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
               </p>
               <MyButton icon="Visibility" text="View"></MyButton>
             </div>
-          </article>
-
+          </article>{' '}
           <article
             w-pos="relative"
             w-flex="~ col"
             w-gap="4"
-            w-bg="gray"
+            w-border="solid 4"
             w-p="4"
             w-rounded="sm"
           >
@@ -111,10 +111,11 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-object="cover"
               />
             </Link>
-
             <div>
-              <h3 w-text="h3">Website</h3>
-              <p w-m="b-1">
+              <h3 w-text="h3" w-font="bold">
+                Website
+              </h3>
+              <p w-m="b-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

@@ -29,13 +29,8 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
   const [form, setForm] = useState(initialForm);
 
   return (
-    <section
-      id="contact"
-      w-w="full"
-      w-p="b-8"
-      w-transition="colors duration-500"
-    >
-      <div w-w="full" w-p="t-8" w-pos="relative" w-max-w="1168px" w-m="x-auto">
+    <section id="contact" w-max-w="1168px" w-w="screen" w-p="b-8">
+      <div w-w="full" w-p="t-8" w-pos="relative" w-max-w="1120px" w-m="x-auto">
         <div
           w-pos="relative"
           w-p="t-12 x-6 b-14"
@@ -44,10 +39,12 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
           w-w="300px"
           w-m="l-auto"
           w-z="1"
-          w-bg="secondary"
+          w-bg="secondary dark:darkSecondary"
+          w-rounded="sm"
         >
           <h2
             w-text="center biggest"
+            w-color="primary"
             w-font="bold"
             w-transform="~ -translate-x-24"
           >
@@ -70,14 +67,14 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-bg="primary"
             w-pos="absolute top-10 right-5"
             w-transform="~ rotate-120"
-            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-6px bottom-10px"
+            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid -left-6px bottom-10px"
           />
         </div>
 
         <div
           w-w="full"
           w-pos="relative"
-          w-bg="gray"
+          w-bg="gray dark:darkGray"
           w-p="t-20 x-6 b-10"
           w-m="-t-20"
         >
@@ -117,16 +114,16 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   w-pos="absolute"
                   w-w="full"
                   w-h="full"
-                  w-bg="gray"
+                  w-bg="gray dark:darkGray"
                   w-p="4"
                   w-font="medium"
                 />
                 <label
                   htmlFor="name"
                   w-pos="absolute top-18px left-10px"
-                  w-text="$black-color-light small"
+                  w-text="$black-color-light small dark:white"
                   w-font="medium"
-                  w-bg="gray"
+                  w-bg="gray dark:darkGray"
                   w-p="x-2"
                   w-pointer="none"
                   w-transform={form.firstName.length && '~ -translate-y-2rem'}
@@ -158,16 +155,16 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   w-pos="absolute"
                   w-w="full"
                   w-h="full"
-                  w-bg="gray"
+                  w-bg="gray dark:darkGray"
                   w-p="4"
                   w-font="medium"
                 />
                 <label
                   htmlFor="email"
                   w-pos="absolute top-18px left-10px"
-                  w-text="$black-color-light small"
+                  w-text="$black-color-light small dark:white"
                   w-font="medium"
-                  w-bg="gray"
+                  w-bg="gray dark:darkGray"
                   w-p="x-2"
                   w-pointer="none"
                   w-transform={form.email.length && '~ -translate-y-2rem'}
@@ -179,7 +176,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-w="full"
                 w-outline="none"
                 w-pos="relative"
-                w-bg="gray"
+                w-bg="gray dark:darkGray"
                 w-p="4"
                 w-border="~ 2 rounded-sm $black-color-light"
               >
@@ -201,15 +198,15 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                   w-outline="none"
                   w-w="full"
                   w-h="full"
-                  w-bg="gray"
+                  w-bg="gray dark:darkGray"
                   w-font="medium"
                 />
                 <label
                   htmlFor="message"
                   w-pos="absolute top-18px left-10px"
-                  w-text="$black-color-light small"
+                  w-text="$black-color-light small dark:white"
                   w-font="medium"
-                  w-bg="gray"
+                  w-bg="gray dark:darkGray"
                   w-p="x-2"
                   w-pointer="none"
                   w-transform={form.message.length && '~ -translate-y-2rem'}
@@ -253,7 +250,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-p="2px"
                 w-rounded="sm"
                 w-transition="duration-300"
-                w-hover="bg-black"
+                w-hover="bg-primary"
               >
                 <LinkedInIcon w-text="white" w-transition="duration-300" />
               </Link>
@@ -267,7 +264,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-p="2px"
                 w-rounded="sm"
                 w-transition="duration-300"
-                w-hover="bg-black"
+                w-hover="bg-primary"
               >
                 <GitHubIcon w-text="white" w-transition="duration-300" />
               </Link>
@@ -281,7 +278,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-p="2px"
                 w-rounded="sm"
                 w-transition="duration-300"
-                w-hover="bg-black"
+                w-hover="bg-primary"
               >
                 <EmailIcon w-text="white" w-transition="duration-300" />
               </Link>

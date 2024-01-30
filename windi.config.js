@@ -1,7 +1,8 @@
-import { defineConfig } from 'windicss/helpers';
 import filters from 'windicss/plugin/filters';
 import aspect from 'windicss/plugin/aspect-ratio';
 import scrollSnapPlugin from 'windicss/plugin/scroll-snap';
+import { defineConfig } from 'windicss/helpers';
+import { colors } from './windi.config.color';
 
 export default defineConfig({
   attributify: {
@@ -11,6 +12,7 @@ export default defineConfig({
     include: ['**/*.{jsx,tsx,css}'],
     exclude: ['node_modules', '.git', '.next'],
   },
+  darkMode: 'class',
   theme: {
     zIndex: {
       fixed: 100,
@@ -25,10 +27,7 @@ export default defineConfig({
     },
     extend: {
       colors: {
-        primary: '#FF5841',
-        secondary: '#d2e9e9',
-        black: '#25171A',
-        gray: '#f5f5f5',
+        ...colors,
       },
       fontFamily: {
         inherit: 'inherit',

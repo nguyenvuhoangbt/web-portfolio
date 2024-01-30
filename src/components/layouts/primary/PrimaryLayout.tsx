@@ -52,10 +52,6 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
     return () => window?.removeEventListener('scroll', handleScroll);
   });
 
-  const scrollUp = () => {
-    window.scroll({ top: 0 });
-  };
-
   return (
     <>
       <style jsx global>{`
@@ -68,23 +64,27 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <title>{`${lang.author.name} | Portfolio`}</title>
       </Head>
       <Header />
-      <main id="main" w-flex="~ col" w-items={`${items}`} w-text="black">
+      <main
+        className="!scrollbar-hide"
+        id="main"
+        w-flex="~ col"
+        w-items={`${items}`}
+        w-text="black dark:white"
+        w-bg="dark:black"
+      >
         {children}
       </main>
       <Footer />
 
-      <Link href="#">
-        <MyButton
-          className="w-8 h-8"
-          icon="ArrowDropUp"
-          iconSize="text-h2"
-          w-pos={`fixed right-4 ${
-            isShowScrollUp ? 'bottom-10' : '-bottom-1/2'
-          }`}
-          w-z="fixed"
-          w-transition="duration-300 all ease-in-out"
-          w-transform="~"
-        />
+      <Link
+        href="#"
+        className={`${isShowScrollUp ? '' : 'translate-y-100'}`}
+        w-pos="fixed right-4 bottom-10"
+        w-transform="~"
+        w-transition="~ duration-500"
+        w-z="fixed"
+      >
+        <MyButton className="w-8 h-8" icon="ArrowDropUp" iconSize="text-h2" />
       </Link>
     </>
   );
