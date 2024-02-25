@@ -10,7 +10,7 @@ const ButtonMenu: React.FC<MyButtonProps> = () => {
   return (
     <NavigationProvider>
       <MyButton
-        className="w-8"
+        className="w-8 lg:hidden"
         icon="Menu"
         onClick={() => {
           setIsOpenMenu(true);

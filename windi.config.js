@@ -32,6 +32,9 @@ export default defineConfig({
       fontFamily: {
         inherit: 'inherit',
       },
+      boxShadow: {
+        'contact-box': '4px 0 8px hsla(0, 0%, 4%, .3)',
+      },
     },
   },
   plugins: [filters, aspect, scrollSnapPlugin],

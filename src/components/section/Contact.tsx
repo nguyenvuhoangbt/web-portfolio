@@ -29,24 +29,35 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
   const [form, setForm] = useState(initialForm);
 
   return (
-    <section id="contact" w-max-w="1168px" w-w="screen" w-p="b-8">
-      <div w-w="full" w-p="t-8" w-pos="relative" w-max-w="1120px" w-m="x-auto">
+    <section id="contact" w-min-w="lg:screen" w-max-w="1168px" w-p="b-8 lg:x-6">
+      <div
+        w-p="t-8"
+        w-pos="relative"
+        w-max-w="1120px"
+        w-m="x-auto"
+        w-align="self-center"
+        className="lg:(grid grid-cols-[1fr,2fr]) xl:grid-cols-[360px,750px]"
+      >
         <div
           w-pos="relative"
-          w-p="t-12 x-6 b-14"
+          w-p="t-12 x-6 b-14 xl:16"
           w-flex="~ col"
+          w-justify="center"
           w-gap="4"
-          w-w="300px"
-          w-m="l-auto"
+          w-w="screen lg:full xl:400px"
+          w-h="max lg:300px xl:350px"
+          w-m="x-auto lg:t-10"
           w-z="1"
           w-bg="secondary dark:darkSecondary"
           w-rounded="sm"
+          w-shadow="lg:contact-box"
         >
           <h2
-            w-text="center biggest"
+            w-text="biggest xl:3rem"
+            w-m="xl:b-2"
             w-color="primary"
             w-font="bold"
-            w-transform="~ -translate-x-24"
+            w-transform="~ xl:-translate-x-30"
           >
             Contact me
           </h2>
@@ -65,7 +76,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-w="5"
             w-h="5"
             w-bg="primary"
-            w-pos="absolute top-10 right-5"
+            w-pos="absolute top-10 right-5 xl:right-10"
             w-transform="~ rotate-120"
             w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid -left-6px bottom-10px"
           />
@@ -75,10 +86,10 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
           w-w="full"
           w-pos="relative"
           w-bg="gray dark:darkGray"
-          w-p="t-20 x-6 b-10"
-          w-m="-t-20"
+          w-p="x-4 y-10 sm:x-6 xl:20"
+          w-grid="lg:(col-start-2 col-end-3 row-start-1 row-end-3)"
         >
-          <h3 w-text="center h3" w-font="bold" w-m="t-6 b-4">
+          <h3 w-text="center h3" w-font="bold" w-m="b-4">
             Send me a message
           </h3>
 
@@ -223,50 +234,67 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 text="Send Message"
                 w-bg="primary"
                 w-rounded="sm"
+                w-w="max"
+                w-m="auto sm:0"
               />
             </div>
           </form>
         </div>
 
-        <CurvedArrow
-          w-filter="~ invert-100"
-          w-m="x-auto"
-          w-transform="~ scale-60 rotate-30"
-        />
-
-        <div w-pos="relative" w-grid="~" w-gap="y-4">
-          <div w-text="center" w-grid="~" w-gap="2">
+        <div
+          w-pos="relative"
+          w-flex="~ col"
+          w-gap="y-2"
+          w-grid="xl:(row-start-2 row-end-3 col-span-1)"
+        >
+          <CurvedArrow
+            w-filter="~ invert-100 dark:invert-0"
+            w-m="x-auto"
+            w-transform="~ scale-60"
+          />
+          <div w-text="center xl:left" w-grid="~ xl:cols-2" w-gap="2">
             <div>
               <p>Does not sent emails</p>
               <p w-font="bold">Write me on my social networks</p>
             </div>
 
-            <div w-flex="~" w-gap="3" w-justify="center">
+            <div w-flex="~" w-gap="3" w-justify="center" w-align="items-center">
               <Link
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/nguyenvuhoangbt/"
+                target="_blank"
                 w-items="center"
                 w-text="smaller"
                 w-bg="$black-color-light"
-                w-p="2px"
+                w-p="2px xl:1"
+                w-h="min"
                 w-rounded="sm"
                 w-transition="duration-300"
-                w-hover="bg-primary"
+                w-transform="~"
+                w-hover="bg-primary -translate-y-2"
               >
-                <LinkedInIcon w-text="white" w-transition="duration-300" />
+                <LinkedInIcon
+                  w-text="white xl:biggest"
+                  w-transition="duration-300"
+                />
               </Link>
               <Link
-                href="https://www.github.com/"
+                href="https://github.com/nguyenvuhoangbt"
                 target="_blank"
                 w-flex="~"
                 w-items="center"
                 w-text="smaller"
                 w-bg="$black-color-light"
-                w-p="2px"
+                w-p="2px xl:1"
+                w-h="min"
                 w-rounded="sm"
                 w-transition="duration-300"
-                w-hover="bg-primary"
+                w-transform="~"
+                w-hover="bg-primary -translate-y-2"
               >
-                <GitHubIcon w-text="white" w-transition="duration-300" />
+                <GitHubIcon
+                  w-text="white xl:biggest"
+                  w-transition="duration-300"
+                />
               </Link>
               <Link
                 href="mailto:nguyenvuhoangbt@gmail.com"
@@ -275,12 +303,17 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-flex="~"
                 w-items="center"
                 w-bg="$black-color-light"
-                w-p="2px"
+                w-p="2px xl:1"
+                w-h="min"
                 w-rounded="sm"
                 w-transition="duration-300"
-                w-hover="bg-primary"
+                w-transform="~"
+                w-hover="bg-primary -translate-y-2"
               >
-                <EmailIcon w-text="white" w-transition="duration-300" />
+                <EmailIcon
+                  w-text="white xl:biggest"
+                  w-transition="duration-300"
+                />
               </Link>
             </div>
           </div>

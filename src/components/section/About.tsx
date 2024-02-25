@@ -13,53 +13,49 @@ import Link from 'next/link';
 
 const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
-    <section id="about" w-p="b-8">
-      <div w-max-w="1120px" w-p="t-8" w-m="x-6" w-grid="~ gap-6">
-        <h2 w-text="center biggest" w-font="bold">
-          About me
-        </h2>
+    <section
+      id="about"
+      w-p="y-8"
+      w-max-w="1120px"
+      w-m="x-4 sm:x-6"
+      w-grid="~ gap-6"
+    >
+      <h2 w-text="center biggest" w-font="bold">
+        About me
+      </h2>
 
-        <div w-pos="relative" w-justify="self-center">
-          <Image
-            src={AboutPerfil}
-            alt="About Perfil"
-            fill={false}
-            w-pos="relative"
-            w-w="320px"
-            w-m="auto"
-            w-rounded="sm"
-          />
-          <div
-            w-w="5"
-            w-h="5"
-            w-bg="primary"
-            w-pos="absolute top-20 right-50"
-            w-transform="~ rotate-70"
-            w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid border-$black-color -left-6px -top-6px"
-          />
-        </div>
+      <div>
+        <Image
+          src={AboutPerfil}
+          alt="About Perfil"
+          fill={false}
+          w-pos="relative"
+          w-w="full sm:320px"
+          w-m="auto"
+          w-rounded="sm"
+        />
+      </div>
 
-        <div w-pos="relative" w-p="l-5">
-          <p
-            w-m="b-6"
-            w-after="content-DEFAULT w-5 h-2px absolute -left-2 top-15px"
-          >
-            <b w-pos="relative" w-text="h3">
-              Frontend Developer
-            </b>
-            , {lang.authorDescription}
-          </p>
+      <div w-pos="relative" w-p="sm:l-5">
+        <p
+          w-m="b-6"
+          w-after="content-DEFAULT w-5 h-2px absolute -left-2 top-15px"
+        >
+          <b w-pos="relative" w-text="h3">
+            Frontend Developer
+          </b>
+          , {lang.authorDescription}
+        </p>
 
-          <p>
-            <b>My Skills Are:</b> HTML, CSS, JS, React
-          </p>
-        </div>
+        <p>
+          <b>My Skills Are:</b> HTML, CSS, JS, React
+        </p>
+      </div>
 
-        <div w-flex="~" w-justify="center" w-gap="2">
-          <Link href="https://www.linkedin.com/" target="_blank">
-            <MyButton icon="Send" text="Contact Me" />
-          </Link>
-        </div>
+      <div w-flex="~" w-justify="center" w-gap="2">
+        <Link href="https://www.linkedin.com/" target="_blank">
+          <MyButton icon="Send" text="Contact Me" />
+        </Link>
       </div>
     </section>
   );

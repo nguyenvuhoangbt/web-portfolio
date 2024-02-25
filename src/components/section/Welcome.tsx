@@ -20,12 +20,12 @@ import Link from 'next/link';
 const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
     <section w-p="t-20 b-8" id="home">
-      <div w-max-w="1120px" w-p="t-8" w-m="x-6" w-grid="~ gap-6">
+      <div w-max-w="1120px" w-p="t-8" w-m="x-4" w-grid="~ gap-6">
         <h1 w-text="center biggest" w-font="bold">
           {lang.welcome}
         </h1>
 
-        <div w-justify="self-center">
+        <div w-justify="self-center" w-m="x-6">
           <div w-pos="relative">
             <div
               w-border="4 solid"

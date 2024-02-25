@@ -9,12 +9,12 @@ import MyButton from '@/src/components/button/MyButton';
 
 // Libraries
 import Head from 'next/head';
-import { Raleway, Quicksand } from 'next/font/google';
-import { useContext, useEffect } from 'react';
 import Link from 'next/link';
+import { Quicksand } from 'next/font/google';
+import { useRouter } from 'next/router';
+import { useContext, useEffect } from 'react';
 
-// const font = Raleway({ weight: ['600', '700'], subsets: ['latin'] });
-const font = Quicksand({ weight: ['500', '700'], subsets: ['latin'] });
+const fontQuicksand = Quicksand({ weight: ['500', '700'], subsets: ['latin'] });
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
   items?: 'center' | 'start';
@@ -52,12 +52,16 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
     return () => window?.removeEventListener('scroll', handleScroll);
   });
 
+  const router = useRouter();
+
   return (
     <>
       <style jsx global>{`
         html,
         textarea {
-          font-family: ${font.style.fontFamily};
+          font-family: ${router.locale === 'zh'
+            ? 'cursive'
+            : fontQuicksand.style.fontFamily};
         }
       `}</style>
       <Head>
