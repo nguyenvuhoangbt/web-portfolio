@@ -6,6 +6,7 @@ import { LangType } from '@/src/pages/app';
 
 // Components
 import MyButton from '@/src/components/button/MyButton';
+import BannerHorizontal from '@/src/components/banner/Horizontal';
 
 // Libraries
 import Image from 'next/image';
@@ -36,7 +37,7 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
         />
       </div>
 
-      <div w-pos="relative" w-p="sm:l-5">
+      <div w-p="sm:l-5">
         <p
           w-m="b-6"
           w-after="content-DEFAULT w-5 h-2px absolute -left-2 top-15px"
@@ -46,10 +47,7 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
           </b>
           , {lang.authorDescription}
         </p>
-
-        <p>
-          <b>My Skills Are:</b> HTML, CSS, JS, React
-        </p>
+        <BannerHorizontal />
       </div>
 
       <div w-flex="~" w-justify="center" w-gap="2">

@@ -69,7 +69,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               w-z="2"
             >
               <Link
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/nguyenvuhoangbt/"
                 target="_blank"
                 w-flex="~"
                 w-items="center"
@@ -79,7 +79,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
                 <LinkedInIcon></LinkedInIcon>
               </Link>
               <Link
-                href="https://www.github.com/"
+                href="https://github.com/nguyenvuhoangbt"
                 target="_blank"
                 w-flex="~"
                 w-items="center"
@@ -100,10 +100,6 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               </Link>
             </div>
           </div>
-        </div>
-
-        <div w-m="t-15" w-text="center">
-          {/* <ButtonScrollDown /> */}
         </div>
       </div>
     </section>

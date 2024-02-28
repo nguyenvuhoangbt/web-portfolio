@@ -35,6 +35,9 @@ export default defineConfig({
       boxShadow: {
         'contact-box': '4px 0 8px hsla(0, 0%, 4%, .3)',
       },
+      animation: {
+        'infinite-horizontal': 'swipe 15000ms linear infinite backwards',
+      },
     },
   },
   plugins: [filters, aspect, scrollSnapPlugin],
