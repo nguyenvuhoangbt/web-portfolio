@@ -29,7 +29,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
   const [form, setForm] = useState(initialForm);
 
   return (
-    <section id="contact" w-min-w="lg:screen" w-max-w="1168px" w-p="b-8 lg:x-6">
+    <section id="contact" w-min-w="lg:full" w-max-w="1168px" w-p="b-8 lg:x-6">
       <div
         w-p="t-8"
         w-pos="relative"
@@ -57,7 +57,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-m="xl:b-2"
             w-color="primary"
             w-font="bold"
-            w-transform="~ xl:-translate-x-30"
+            w-transform="~ xl:-translate-x-22"
           >
             Contact me
           </h2>
@@ -76,7 +76,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-w="5"
             w-h="5"
             w-bg="primary"
-            w-pos="absolute top-10 right-5 xl:right-10"
+            w-pos="absolute top-10 right-6 xl:right-10"
             w-transform="~ rotate-120"
             w-after="content-DEFAULT absolute w-4 h-4 border-3 border-solid -left-6px bottom-10px"
           />
