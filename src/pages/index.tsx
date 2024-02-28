@@ -5,6 +5,7 @@ import SectionAbout from '@/components/section/About';
 import SectionServices from '@/src/components/section/Services';
 import SectionProjects from '@/src/components/section/Projects';
 import SectionContact from '@/components/section/Contact';
+import BannerHorizontal from '@/src/components/banner/Horizontal';
 
 // States & Hooks
 import useTranslation from '@/src/hooks/useTranslation';
@@ -29,9 +30,14 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <>
-      <SectionWelcome lang={homeLang}></SectionWelcome>
+      <InViewAnimation>
+        <SectionWelcome lang={homeLang}></SectionWelcome>
+      </InViewAnimation>
       <InViewAnimation>
         <SectionAbout lang={aboutLang}></SectionAbout>
+      </InViewAnimation>
+      <InViewAnimation>
+        <BannerHorizontal />
       </InViewAnimation>
       <InViewAnimation>
         <SectionServices lang={aboutLang}></SectionServices>

@@ -22,7 +22,7 @@ const Horizontal = () => {
     <div
       className="inner"
       w-pos="relative"
-      w-w="full"
+      w-w="1120px"
       w-overflow="hidden"
       w-h="250px"
     >

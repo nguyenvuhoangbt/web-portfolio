@@ -8,7 +8,7 @@ const InViewAnimation: React.FC<{ children: React.ReactNode }> = ({
     () => ({
       from: {
         opacity: 0,
-        y: 100,
+        y: 0,
       },
       to: {
         opacity: 1,

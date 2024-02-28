@@ -36,6 +36,7 @@ const nextConfig = {
       },
     ],
   },
+  transpilePackages: ['@mui/icons-material'],
 };
 
 module.exports = nextConfig;
