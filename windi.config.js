@@ -24,6 +24,12 @@ export default defineConfig({
       normal: '1rem',
       small: '0.85rem',
       smaller: '0.75rem',
+      '0.9rem': ['0.9rem', '1.5'],
+      '1rem': ['1rem', '1.5'],
+      '1.125rem': ['1.125rem', '1.5'],
+      '2rem': ['2rem', '1.5'],
+      '2.5rem': ['2.5rem', '1.5'],
+      '3rem': ['3rem', '1.5'],
     },
     extend: {
       colors: {

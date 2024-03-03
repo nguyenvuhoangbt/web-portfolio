@@ -2,31 +2,58 @@
 import HomePerfil from '@/assets/img/home-perfil.jpg';
 import RandomLines from '@/assets/svg/random-lines.svg';
 
-// Icons
-import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+// Components
+import MyButton from '@/src/components/button/MyButton';
 
 // Consts
 import { LangType } from '@/src/pages/app';
-
-// Components
-import ButtonScrollDown from '@/components/button/ScrollDown';
+import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';
 
 // Libraries
 import Image from 'next/image';
 import Link from 'next/link';
 
 const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
-  return (
-    <section w-p="t-20 b-8" id="home">
-      <div w-max-w="1120px" w-p="t-8" w-m="x-4" w-grid="~ gap-6">
-        <h1 w-text="center biggest" w-font="bold">
-          {lang.welcome}
-        </h1>
+  const contactList = [
+    {
+      href: 'https://www.linkedin.com/in/nguyenvuhoangbt/',
+      text: 'linkedin.com/in/nguyenvuhoangbt',
+      icon: 'LinkedIn',
+    },
+    {
+      href: 'https://github.com/nguyenvuhoangbt/',
+      text: 'github.com/in/nguyenvuhoangbt',
+      icon: 'GitHub',
+    },
+    {
+      href: 'mailto:nguyenvuhoangbt@gmail.com',
+      text: 'nguyenvuhoangbt@gmail.com',
+      icon: 'Email',
+    },
+  ];
 
-        <div w-justify="self-center" w-m="x-6">
-          <div w-pos="relative">
+  return (
+    <section w-p="y-88px x-16px" id="home" w-h="screen" w-w="full">
+      <div w-max-w="1120px" w-m="x-auto" w-grid="~" w-h="full">
+        <h1
+          w-text="center 2rem md:2.5rem"
+          w-font="bold"
+          w-align="self-center"
+          dangerouslySetInnerHTML={{
+            __html: lang.welcome,
+          }}
+          style={{
+            wordBreak: 'keep-all',
+          }}
+        ></h1>
+
+        <div
+          w-justify="self-center"
+          w-m="auto"
+          w-h="max"
+          w-align="items-center"
+        >
+          <div w-pos="relative" w-m="x-32px">
             <div
               w-border="4 solid"
               w-rounded="sm"
@@ -62,42 +89,41 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
             />
 
             <div
-              w-pos="absolute bottom-4 right-4"
+              w-pos="absolute bottom-3 right-4"
               w-flex="~ col"
               w-items="end"
               w-gap="1"
-              w-z="2"
+              w-z="1"
             >
-              <Link
-                href="https://www.linkedin.com/in/nguyenvuhoangbt/"
-                target="_blank"
-                w-flex="~"
-                w-items="center"
-                w-text="smaller"
-              >
-                <span w-m="r-1">linkedin.com/in/nguyenvuhoangbt</span>
-                <LinkedInIcon></LinkedInIcon>
-              </Link>
-              <Link
-                href="https://github.com/nguyenvuhoangbt"
-                target="_blank"
-                w-flex="~"
-                w-items="center"
-                w-text="smaller"
-              >
-                <span w-m="r-1">github.com/in/nguyenvuhoangbt</span>
-                <GitHubIcon></GitHubIcon>
-              </Link>
-              <Link
-                href="mailto:nguyenvuhoangbt@gmail.com"
-                target="_blank"
-                w-text="smaller"
-                w-flex="~"
-                w-items="center"
-              >
-                <span w-m="r-1">nguyenvuhoangbt@gmail.com</span>
-                <EmailIcon></EmailIcon>
-              </Link>
+              {contactList.map(({ href, text, icon }, i) => (
+                <Link
+                  key={i}
+                  href={href}
+                  target="_blank"
+                  w-flex="~"
+                  w-gap="1"
+                  w-items="center"
+                  w-text="smaller"
+                >
+                  <div
+                    style={{
+                      fontFamily: fontQuicksand.style.fontFamily,
+                      letterSpacing: 0,
+                    }}
+                  >
+                    {text}
+                  </div>
+                  <MyButton
+                    icon={icon}
+                    w-p="0"
+                    iconClassName="24px text-black dark:text-white"
+                    w-h="min"
+                    w-bg="transparent"
+                    w-shadow="none"
+                    w-hover="bg-white dark:bg-black shadow-none"
+                  ></MyButton>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

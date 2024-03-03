@@ -4,9 +4,12 @@ import Link from 'next/link';
 // States & Hooks
 import useTranslation from '@/src/hooks/useTranslation';
 
+// Consts
+import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';
+
 export interface IFooter extends React.ComponentPropsWithoutRef<'footer'> {}
 
-const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
+const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
   const lang = useTranslation();
 
   return (
@@ -25,7 +28,7 @@ const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
               w-transition="duration-300"
               w-hover="text-$text-color-light"
             >
-              About
+              {lang.aboutMeTitle}
             </Link>
           </li>
           <li>
@@ -35,7 +38,7 @@ const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
               w-transition="duration-300"
               w-hover="text-$text-color-light"
             >
-              Sevices
+              {lang.servicesTitle}
             </Link>
           </li>
           <li>
@@ -45,15 +48,21 @@ const Footer: React.FC<IFooter> = ({ className, ...footerProps }) => {
               w-transition="duration-300"
               w-hover="text-$text-color-light"
             >
-              Projects
+              {lang.projectsTitle}
             </Link>
           </li>
         </ul>
 
-        <span w-text="$text-color-light small center lg:right">
+        <span
+          w-text="$text-color-light small center lg:right"
+          style={{
+            fontFamily: fontQuicksand.style.fontFamily,
+            letterSpacing: 0,
+          }}
+        >
           &#169; All Rights Reserved by{' '}
           <Link href="/" w-text="white" w-font="bold">
-            {lang.author.name}
+            {lang.authorName}
           </Link>
         </span>
       </div>

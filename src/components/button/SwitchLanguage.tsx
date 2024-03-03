@@ -4,7 +4,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useRouter } from 'next/router';
 import { styled } from '@mui/material';
 
-const ButtonGroupStyledToggle = styled(ToggleButtonGroup)(({ theme }) => ({
+const ButtonGroupStyledToggle = styled(ToggleButtonGroup)(() => ({
   // '& .MuiToggleButtonGroup-grouped': {
   //   border: 0,
   //   '&:not(:first-of-type)': {
@@ -33,6 +33,17 @@ const ButtonSwitchLanguage = () => {
     }
   };
 
+  const langList = [
+    {
+      value: 'en',
+      label: 'en',
+    },
+    {
+      value: 'zh',
+      label: '中',
+    },
+  ];
+
   return (
     <ButtonGroupStyledToggle
       size="small"
@@ -40,29 +51,20 @@ const ButtonSwitchLanguage = () => {
       exclusive
       onChange={handleChangeLang}
       aria-label="language switch"
-      w-h="8"
+      w-h="32px"
     >
-      {/* <ToggleButton value="vi" aria-label="vi" w-w="10">
-        vi
-      </ToggleButton> */}
-      <ToggleButton
-        value="en"
-        aria-label="en"
-        w-w="10"
-        w-text="dark:white"
-        w-hover="dark:bg-[#ffffff1a]"
-      >
-        en
-      </ToggleButton>
-      <ToggleButton
-        value="zh"
-        aria-label="zh"
-        w-w="10"
-        w-text="dark:white"
-        w-hover="dark:bg-[#ffffff1a]"
-      >
-        中
-      </ToggleButton>
+      {langList.map(({ value, label }, i) => (
+        <ToggleButton
+          key={i}
+          value={value}
+          aria-label="en"
+          w-w="40px"
+          w-text="dark:white 14px"
+          w-hover="dark:bg-[#ffffff1a]"
+        >
+          {label}
+        </ToggleButton>
+      ))}
     </ButtonGroupStyledToggle>
   );
 };

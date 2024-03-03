@@ -14,7 +14,10 @@ import { Quicksand } from 'next/font/google';
 import { useRouter } from 'next/router';
 import { useContext, useEffect } from 'react';
 
-const fontQuicksand = Quicksand({ weight: ['500', '700'], subsets: ['latin'] });
+export const fontQuicksand = Quicksand({
+  weight: ['500', '700'],
+  subsets: ['latin'],
+});
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
   items?: 'center' | 'start';
@@ -57,15 +60,18 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   return (
     <>
       <style jsx global>{`
-        html,
-        textarea {
-          font-family: ${router.locale === 'zh'
-            ? 'cursive'
-            : fontQuicksand.style.fontFamily};
+        * {
+          ${
+            router.locale === 'zh'
+              ? 'letter-spacing: 1px; font-family: cursive;'
+              : `font-family: ${fontQuicksand.style.fontFamily}`
+          }
         }
+        a, p {
+          ${router.locale === 'zh' ? 'font-size: 20px' : ''}
       `}</style>
       <Head>
-        <title>{`${lang.author.name} | Portfolio`}</title>
+        <title>{`${lang.authorName} | ${lang.portfolio}`}</title>
       </Head>
       <Header />
       <main
@@ -73,8 +79,9 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         id="main"
         w-flex="~ col"
         w-items={`${items}`}
-        w-text="black dark:white"
         w-bg="dark:black"
+        w-overflow="hidden"
+        w-text="black dark:white"
       >
         {children}
       </main>
@@ -88,7 +95,11 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         w-transition="~ duration-500"
         w-z="fixed"
       >
-        <MyButton className="w-8 h-8" icon="ArrowDropUp" iconSize="text-h2" />
+        <MyButton
+          className="w-8 h-8"
+          icon="ArrowDropUp"
+          iconClassName="text-h2"
+        />
       </Link>
     </>
   );

@@ -6,7 +6,7 @@ import { Button, ButtonProps } from '@mui/material';
 export interface MyButtonProps extends ButtonProps {
   variant?: 'text' | 'outlined' | 'contained';
   icon?: string;
-  iconSize?: string;
+  iconClassName?: string;
   text?: string;
 }
 
@@ -15,7 +15,7 @@ type IconProps = {
   className: string;
 };
 
-const IconComponent: FC<IconProps> = ({ iconName, className }) => {
+export const IconComponent: FC<IconProps> = ({ iconName, className }) => {
   const Icon = Icons[iconName];
   return <Icon className={className} />;
 };
@@ -23,7 +23,7 @@ const IconComponent: FC<IconProps> = ({ iconName, className }) => {
 const MyButton: React.FC<MyButtonProps> = ({
   variant = 'contained',
   icon,
-  iconSize = 'text-normal',
+  iconClassName = 'text-normal',
   text,
   ...props
 }: MyButtonProps) => {
@@ -33,13 +33,14 @@ const MyButton: React.FC<MyButtonProps> = ({
       w-font="inherit"
       w-min-w="0"
       w-rounded="sm"
+      w-h="8"
       {...props}
     >
       <div w-flex="~" w-gap="2" w-items="center" w-font="bold">
         {icon && (
           <IconComponent
             iconName={icon as keyof typeof Icons}
-            className={iconSize}
+            className={iconClassName}
           />
         )}
         {text}

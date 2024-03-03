@@ -24,15 +24,35 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
     useContext(NavigationContext);
   const lang = useTranslation();
 
+  const sectionList = [
+    {
+      href: '/#about',
+      title: lang.aboutMeTitle,
+    },
+    {
+      href: '/#services',
+      title: lang.servicesTitle,
+    },
+    {
+      href: '/#projects',
+      title: lang.projectsTitle,
+    },
+    {
+      href: '/#contact',
+      title: lang.contactMeTitle,
+    },
+  ];
+
   return (
     <header
       {...headerProps}
       w-pos="fixed top-0 left-0"
       w-h="$header-height"
       w-w="full"
+      w-min-w="375px"
       w-p="x-4"
       w-z="fixed"
-      w-transition="shadow duration-300"
+      w-transition="shadow duration-1000"
       w-flex="~"
       w-items="center"
       w-bg="white dark:black"
@@ -52,13 +72,15 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           w-align="items-center"
           w-font="bold"
         >
-          <span w-text="normal black sm:h3 dark:white">{lang.author.name}</span>
+          <span w-text="normal black sm:h3 dark:white">{lang.authorName}</span>
         </Link>
 
         <div w-flex="~" w-gap="8">
           <div
-            className={isOpenMenu ? 'top-0' : '-top-full'}
-            w-pos="<lg:fixed <lg:left-0"
+            className={
+              isOpenMenu ? '<lg:translate-y-0' : '<lg:-translate-y-full'
+            }
+            w-pos="<lg:(fixed top-0 left-0)"
             w-z="<lg:fixed"
             w-bg="opacity-75 black dark:opacity-95 lg:transparent"
             w-p="y-4"
@@ -66,18 +88,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
             w-text="center"
             w-backdrop="filter blur-2 lg:blur-0"
             w-transform="~"
-            w-transition="duration-500"
+            w-transition="<lg:duration-500"
           >
-            <span
-              w-text="$white-color"
-              w-display="block"
-              w-font="bold"
-              w-m="b-8"
-              w-lg="hidden"
-            >
-              Menu
-            </span>
-
             <span
               w-w="max"
               w-pos="relative"
@@ -86,10 +98,10 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
               w-after="content-DEFAULT w-10 h-px bg-$text-color-light absolute top-1/2 -left-16"
               w-lg="hidden"
             >
-              Hector
+              {lang.authorName}
             </span>
 
-            <ul w-flex="~ col lg:row" w-gap="y-2" w-m="<lg:t-8">
+            <ul w-flex="~ col lg:row" w-gap="y-2" w-m="<lg:t-6">
               <li
                 w-flex="~"
                 w-m="x-auto"
@@ -105,81 +117,33 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
                   onClick={() => setIsOpenMenu(false)}
                   w-lg="hidden"
                 >
-                  Home
+                  {lang.homeTitle}
                 </Link>
               </li>
-              <li
-                w-flex="~"
-                w-m="x-auto"
-                w-w="max-content"
-                w-pos="relative"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4) lg:bg-black"
-              >
-                <Link
-                  href="/#about"
-                  w-text="white lg:black dark:white"
-                  w-font="bold"
-                  w-p="4"
-                  onClick={() => setIsOpenMenu(false)}
+              {sectionList.map(({ href, title }, i) => (
+                <li
+                  key={i}
+                  w-flex="~"
+                  w-m="x-auto"
+                  w-w="max-content"
+                  w-pos="relative"
+                  w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4) lg:bg-black"
                 >
-                  About me
-                </Link>
-              </li>
-              <li
-                w-flex="~"
-                w-m="x-auto"
-                w-w="max-content"
-                w-pos="relative"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4) lg:bg-black"
-              >
-                <Link
-                  href="/#services"
-                  w-text="white lg:black dark:white"
-                  w-font="bold"
-                  w-p="4"
-                  onClick={() => setIsOpenMenu(false)}
-                >
-                  Services
-                </Link>
-              </li>
-              <li
-                w-flex="~"
-                w-m="x-auto"
-                w-w="max-content"
-                w-pos="relative"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4) lg:bg-black"
-              >
-                <Link
-                  href="/#projects"
-                  w-text="white lg:black dark:white"
-                  w-font="bold"
-                  w-p="4"
-                  onClick={() => setIsOpenMenu(false)}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li
-                w-flex="~"
-                w-m="x-auto"
-                w-w="max-content"
-                w-pos="relative"
-                w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4) lg:bg-black"
-              >
-                <Link
-                  href="/#contact"
-                  w-text="white lg:black dark:white"
-                  w-font="bold"
-                  w-p="4"
-                  onClick={() => setIsOpenMenu(false)}
-                >
-                  Contact me
-                </Link>
-              </li>
+                  <Link
+                    href={href}
+                    w-text="white lg:black dark:white"
+                    w-font="bold"
+                    w-p="4"
+                    onClick={() => setIsOpenMenu(false)}
+                  >
+                    {title}
+                  </Link>
+                </li>
+              ))}
             </ul>
 
             <IconButton
-              className="top-3 right-3"
+              className="top-24px right-14px"
               aria-label="delete"
               onClick={() => {
                 setIsOpenMenu(false);

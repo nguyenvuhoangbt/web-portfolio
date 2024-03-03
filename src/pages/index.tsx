@@ -5,7 +5,6 @@ import SectionAbout from '@/components/section/About';
 import SectionServices from '@/src/components/section/Services';
 import SectionProjects from '@/src/components/section/Projects';
 import SectionContact from '@/components/section/Contact';
-import BannerHorizontal from '@/src/components/banner/Horizontal';
 
 // States & Hooks
 import useTranslation from '@/src/hooks/useTranslation';
@@ -18,35 +17,23 @@ import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 const Home: NextPageWithLayout = () => {
   const lang = useTranslation();
-  const homeLang = {
-    welcome: lang.welcome,
-    authorName: lang.author.name,
-  };
-
-  const aboutLang = {
-    authorName: lang.author.name,
-    authorDescription: lang.author.description,
-  };
 
   return (
     <>
       <InViewAnimation>
-        <SectionWelcome lang={homeLang}></SectionWelcome>
+        <SectionWelcome lang={lang}></SectionWelcome>
       </InViewAnimation>
       <InViewAnimation>
-        <SectionAbout lang={aboutLang}></SectionAbout>
+        <SectionAbout lang={lang}></SectionAbout>
       </InViewAnimation>
       <InViewAnimation>
-        <BannerHorizontal />
+        <SectionServices lang={lang}></SectionServices>
       </InViewAnimation>
       <InViewAnimation>
-        <SectionServices lang={aboutLang}></SectionServices>
+        <SectionProjects lang={lang}></SectionProjects>
       </InViewAnimation>
       <InViewAnimation>
-        <SectionProjects lang={aboutLang}></SectionProjects>
-      </InViewAnimation>
-      <InViewAnimation>
-        <SectionContact lang={aboutLang}></SectionContact>
+        <SectionContact lang={lang}></SectionContact>
       </InViewAnimation>
     </>
   );

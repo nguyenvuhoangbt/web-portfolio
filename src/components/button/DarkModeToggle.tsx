@@ -1,6 +1,6 @@
 import * as React from 'react';
 import DarkModeContext from '@/src/state/darkMode/DarkModeContext';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 const properties = {

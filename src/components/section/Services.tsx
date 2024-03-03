@@ -1,123 +1,67 @@
+// Components
+import SeviceCard from '@/src/components/cards/Service';
+
 // Consts
 import { LangType } from '@/src/pages/app';
 
+// Icons
+import SpaceDashboardOutlinedIcon from '@mui/icons-material/SpaceDashboardOutlined';
+import CodeIcon from '@mui/icons-material/Code';
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
+
+// States & Hooks
+import InViewAnimation from '@/src/hooks/useInViewAnimation';
+
 const SectionService: React.FC<{ lang: LangType }> = ({ lang }) => {
+  const serviceList = [
+    {
+      title: lang.designTitle,
+      content: lang.webDesignContent,
+      icon: (
+        <SpaceDashboardOutlinedIcon viewBox="2 2 20 20"></SpaceDashboardOutlinedIcon>
+      ),
+    },
+    {
+      title: lang.developmentTitle,
+      content: lang.developmentContent,
+      icon: <CodeIcon viewBox="2 2 20 20"></CodeIcon>,
+    },
+    {
+      title: lang.maintenanceTitle,
+      content: lang.maintenanceContent,
+      icon: <BuildOutlinedIcon viewBox="0 0 24 24"></BuildOutlinedIcon>,
+    },
+    {
+      title: lang.optimizationTitle,
+      content: lang.optimizationContent,
+      icon: <QueryStatsIcon viewBox="2 2 20 20"></QueryStatsIcon>,
+    },
+  ];
   return (
     <section id="services" w-p="b-8">
-      <div w-max-w="1120px" w-p="t-8" w-m="x-6" w-grid="~ gap-6">
-        <h2 w-text="center biggest" w-font="bold">
-          Services
+      <div w-justify="center" w-p="t-8" w-grid="~" w-gap="4 md:10">
+        <h2 w-text="center 2em md:3em" w-font="bold">
+          {`${lang.servicesTitle}`}
         </h2>
 
-        <div w-justify="center" w-flex="~ col lg:row" w-gap="8 lg:16">
-          <article
-            w-pos="relative"
-            w-flex="~"
-            w-w="250px"
-            w-h="300px"
-            className="group"
-          >
-            <div
-              w-pos="absolute"
-              w-h="full"
-              w-w="full"
-              w-p="x-4 y-10"
-              w-border="4 solid"
-              w-rounded="sm"
-              w-bg="white dark:black"
-              w-z="1"
-            >
-              <h3 w-text="h3" w-font="bold">
-                Web Design
-              </h3>
-              <p className="services_description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div
-              className="services__border"
-              w-pos="absolute top-0px left-0px"
-              w-w="250px"
-              w-h="300px"
-              w-border="4 solid primary dark:primary"
-              w-rounded="sm"
-              w-transform="~ duration-500"
-              w-group-hover="translate-x-3 translate-y-3"
-            />
-          </article>
-          <article
-            w-pos="relative"
-            w-flex="~"
-            w-w="250px"
-            w-h="300px"
-            className="group"
-          >
-            <div
-              w-pos="absolute"
-              w-h="full"
-              w-w="full"
-              w-p="x-4 y-10"
-              w-border="4 solid"
-              w-rounded="sm"
-              w-bg="white dark:black"
-              w-z="1"
-            >
-              <h3 w-text="h3" w-font="bold">
-                Web Design
-              </h3>
-              <p className="services_description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div
-              className="services__border"
-              w-pos="absolute top-0px left-0px"
-              w-w="250px"
-              w-h="300px"
-              w-border="4 solid primary dark:primary"
-              w-rounded="sm"
-              w-transform="~ duration-500"
-              w-group-hover="translate-x-3 translate-y-3"
-            />
-          </article>
-          <article
-            w-pos="relative"
-            w-flex="~"
-            w-w="250px"
-            w-h="300px"
-            className="group"
-          >
-            <div
-              w-pos="absolute"
-              w-h="full"
-              w-w="full"
-              w-p="x-4 y-10"
-              w-border="4 solid"
-              w-rounded="sm"
-              w-bg="white dark:black"
-              w-z="1"
-            >
-              <h3 w-text="h3" w-font="bold">
-                Web Design
-              </h3>
-              <p className="services_description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div
-              className="services__border"
-              w-pos="absolute top-0px left-0px"
-              w-w="250px"
-              w-h="300px"
-              w-border="4 solid primary dark:primary"
-              w-rounded="sm"
-              w-transform="~ duration-500"
-              w-group-hover="translate-x-3 translate-y-3"
-            />
-          </article>
+        <div
+          w-grid="~ <sm:rows-4 sm:(cols-2 rows-2) lg:(cols-4 rows-1)"
+          w-p="x-4"
+          w-justify="between"
+          w-gap="6"
+          w-align="items-center"
+          w-max-w="full"
+        >
+          {serviceList.map(({ title, content, icon }, i) => (
+            <InViewAnimation startY={-50} duration={1000} key={i}>
+              <SeviceCard
+                title={title}
+                content={content}
+                icon={icon}
+              ></SeviceCard>
+            </InViewAnimation>
+          ))}
         </div>
       </div>
     </section>

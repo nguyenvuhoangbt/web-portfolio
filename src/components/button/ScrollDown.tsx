@@ -1,6 +1,6 @@
 import { MyButtonProps } from './MyButton';
 import { Button } from '@mui/material';
-import { useSpring, animated, config, easings } from '@react-spring/web';
+import { useSpring, animated } from '@react-spring/web';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const ButtonScrollDown: React.FC<MyButtonProps> = ({
@@ -21,8 +21,6 @@ const ButtonScrollDown: React.FC<MyButtonProps> = ({
     loop: true,
     config: {
       duration: 200,
-      // tension: 100,
-      // easing: easings.easeInOutQuart,
     },
   });
 
