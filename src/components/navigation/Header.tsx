@@ -71,6 +71,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           w-gap="2"
           w-align="items-center"
           w-font="bold"
+          w-text="1.5rem"
         >
           {lang.authorName}
         </Link>
@@ -127,7 +128,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
                   w-m="x-auto"
                   w-w="max-content"
                   w-pos="relative"
-                  w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4) lg:bg-black"
+                  w-after="content-DEFAULT w-0 h-2px bg-$white-color absolute left-4 bottom-2 transition-width duration-500 hover:(w-1/4) lg:bg-black dark:lg:bg-white"
                 >
                   <Link
                     href={href}

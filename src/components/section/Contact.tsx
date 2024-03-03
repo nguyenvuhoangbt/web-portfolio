@@ -32,9 +32,23 @@ const maxMessageLength = 3000;
 
 const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
   const [form, setForm] = useState(initialForm);
+  const contactList = [
+    {
+      href: 'https://www.linkedin.com/in/nguyenvuhoangbt/',
+      icon: 'LinkedIn',
+    },
+    {
+      href: 'https://github.com/nguyenvuhoangbt/',
+      icon: 'GitHub',
+    },
+    {
+      href: 'mailto:nguyenvuhoangbt@gmail.com',
+      icon: 'Email',
+    },
+  ];
 
   return (
-    <section id="contact" w-min-w="lg:full" w-max-w="1168px" w-p="b-8 lg:x-6">
+    <section id="contact" w-min-w="lg:full" w-max-w="1168px" w-p="b-20 lg:x-6">
       <div
         w-p="t-8"
         w-pos="relative"
@@ -64,7 +78,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-shadow="lg:contact-box"
           >
             <h2
-              w-text="biggest xl:3em"
+              w-text="3rem"
               w-m="xl:b-2"
               w-color="primary"
               w-font="bold"
@@ -304,62 +318,30 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-justify="center"
                 w-align="items-center"
               >
-                <Link
-                  href="https://www.linkedin.com/in/nguyenvuhoangbt/"
-                  target="_blank"
-                  w-items="center"
-                  w-text="smaller"
-                  w-bg="$black-color-light"
-                  w-p="2px xl:1"
-                  w-h="min"
-                  w-rounded="sm"
-                  w-transition="duration-300"
-                  w-transform="~"
-                  w-hover="bg-primary -translate-y-2"
-                >
-                  <LinkedInIcon
-                    w-text="white xl:biggest"
+                {contactList.map(({ href, icon }, i) => (
+                  <Link
+                    key={i}
+                    href={href}
+                    target="_blank"
+                    w-items="center"
+                    w-text="smaller"
+                    w-bg="$black-color-light"
+                    w-rounded="sm"
                     w-transition="duration-300"
-                  />
-                </Link>
-                <Link
-                  href="https://github.com/nguyenvuhoangbt"
-                  target="_blank"
-                  w-flex="~"
-                  w-items="center"
-                  w-text="smaller"
-                  w-bg="$black-color-light"
-                  w-p="2px xl:1"
-                  w-h="min"
-                  w-rounded="sm"
-                  w-transition="duration-300"
-                  w-transform="~"
-                  w-hover="bg-primary -translate-y-2"
-                >
-                  <GitHubIcon
-                    w-text="white xl:biggest"
-                    w-transition="duration-300"
-                  />
-                </Link>
-                <Link
-                  href="mailto:nguyenvuhoangbt@gmail.com"
-                  target="_blank"
-                  w-text="smaller"
-                  w-flex="~"
-                  w-items="center"
-                  w-bg="$black-color-light"
-                  w-p="2px xl:1"
-                  w-h="min"
-                  w-rounded="sm"
-                  w-transition="duration-300"
-                  w-transform="~"
-                  w-hover="bg-primary -translate-y-2"
-                >
-                  <EmailIcon
-                    w-text="white xl:biggest"
-                    w-transition="duration-300"
-                  />
-                </Link>
+                    w-transform="~"
+                    w-hover="-translate-y-8px"
+                  >
+                    <MyButton
+                      icon={icon}
+                      w-p="1"
+                      iconClassName="w-32px h-32px"
+                      w-h="10"
+                      w-bg="transparent"
+                      w-text="white xl:biggest"
+                      w-transition="duration-300"
+                    ></MyButton>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
