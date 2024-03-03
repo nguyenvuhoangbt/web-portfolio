@@ -1,9 +1,9 @@
-import { IButton } from './IButton';
+import { MyButtonProps } from './MyButton';
 
-const base: IButton = {
+const base: MyButtonProps = {
   variant: 'contained',
 };
 
-export const mockScrollDownButtonProps = {
+export const mockButtonScrollDownProps = {
   base,
 };

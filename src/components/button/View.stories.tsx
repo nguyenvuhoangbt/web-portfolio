@@ -1,22 +1,22 @@
-import SwitchLanguageButton from './SwitchLanguage';
+import ViewButton from './MyButton';
 import { MyButtonProps } from './MyButton';
 import { Meta, StoryFn } from '@storybook/react';
-import { mockSwitchLanguageButtonProps } from './SwitchLanguage.mocks';
+import { mockViewButtonProps } from './View.mocks';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 const meta = {
   title: 'Button/ScrollDown',
-  component: SwitchLanguageButton,
+  component: ViewButton,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as Meta<typeof SwitchLanguageButton>;
+} as Meta<typeof ViewButton>;
 
 export default meta;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof SwitchLanguageButton> = () => (
+const Template: StoryFn<typeof ViewButton> = () => (
   <StyledEngineProvider injectFirst>
-    <SwitchLanguageButton />
+    <ViewButton />
   </StyledEngineProvider>
 );
 
@@ -24,7 +24,7 @@ export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 
 Base.args = {
-  ...mockSwitchLanguageButtonProps.base,
+  ...mockViewButtonProps.base,
 } as MyButtonProps;
 
 // type Story = StoryObj<typeof meta>;

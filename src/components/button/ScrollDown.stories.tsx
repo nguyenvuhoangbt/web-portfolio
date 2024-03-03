@@ -1,7 +1,7 @@
 import ScrollDownButton from './ScrollDown';
-import { IButton } from './IButton';
-import { Meta, StoryFn, StoryObj } from '@storybook/react';
-import { mockScrollDownButtonProps } from './ScrollDown.mocks';
+import { MyButtonProps } from './MyButton';
+import { Meta, StoryFn } from '@storybook/react';
+import { mockButtonScrollDownProps } from './ScrollDown.mocks';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 const meta = {
@@ -24,8 +24,8 @@ export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 
 Base.args = {
-  ...mockScrollDownButtonProps.base,
-} as IButton;
+  ...mockButtonScrollDownProps.base,
+} as MyButtonProps;
 
 // type Story = StoryObj<typeof meta>;
 

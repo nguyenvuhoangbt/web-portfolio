@@ -4,6 +4,6 @@ const base: MyButtonProps = {
   variant: 'contained',
 };
 
-export const mockSwitchLanguageButtonProps = {
+export const mockViewButtonProps = {
   base,
 };

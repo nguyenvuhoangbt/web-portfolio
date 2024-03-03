@@ -1,5 +1,5 @@
 import MenuButton from './Menu';
-import { IButton } from './IButton';
+import { MyButtonProps } from './MyButton';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
 import { mockMenuButtonProps } from './Menu.mocks';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -25,7 +25,7 @@ export const Base = Template.bind({});
 
 Base.args = {
   ...mockMenuButtonProps.base,
-} as IButton;
+} as MyButtonProps;
 
 // type Story = StoryObj<typeof meta>;
 

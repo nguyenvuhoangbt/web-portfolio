@@ -16,6 +16,27 @@ const nextConfig = {
     defaultLocale: 'en',
     localeDetection: false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+      },
+    ],
+  },
+  transpilePackages: ['@mui/icons-material'],
 };
 
 module.exports = nextConfig;

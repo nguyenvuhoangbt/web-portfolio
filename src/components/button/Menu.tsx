@@ -1,24 +1,21 @@
 import NavigationContext from '@/src/state/navigation/NavigationContext';
-import MenuIcon from '@mui/icons-material/Menu';
+import MyButton from '@/components/button/MyButton';
 import { useContext } from 'react';
-import { Button } from '@mui/material';
 import { NavigationProvider } from '@/src/state/navigation/NavigationContext';
-import { IButton } from './IButton';
+import { MyButtonProps } from './MyButton';
 
-const ButtonMenu: React.FC<IButton> = ({ variant = 'contained' }: IButton) => {
+const ButtonMenu: React.FC<MyButtonProps> = () => {
   const { setIsOpenMenu } = useContext(NavigationContext);
 
   return (
     <NavigationProvider>
-      <Button
-        variant={variant}
-        className="min-w-8 h-8 p-0"
+      <MyButton
+        className="w-35px lg:hidden"
+        icon="Menu"
         onClick={() => {
           setIsOpenMenu(true);
         }}
-      >
-        <MenuIcon className="text-xl" />
-      </Button>
+      />
     </NavigationProvider>
   );
 };

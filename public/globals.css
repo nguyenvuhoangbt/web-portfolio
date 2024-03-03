@@ -5,7 +5,7 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
+  --header-height: 88px;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -20,15 +20,6 @@
   --container-color: hsl(0, 0%, 83%);
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Bai Jamjuree', sans-serif;
-  --biggest-font-size: 2.5rem; /* setting in windi.config.js */
-  --h1-font-size: 1.75rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -42,41 +33,57 @@
 }
 
 /*========== Responsive typography ==========*/
-@media screen and (min-width: 1150px) {
+
+@media screen and (max-width: 768px) {
   :root {
-    --biggest-font-size: 4.5rem;
-    --h1-font-size: 3rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
+    --header-height: 66px;
   }
 }
 
 /*=============== BASE ===============*/
 * {
   box-sizing: border-box;
+  line-height: normal;
   padding: 0;
   margin: 0;
+
+  /* for fix header height 88px */
+  scroll-margin-top: var(--header-height);
 }
 
 html {
+  overflow: auto;
   scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 8px;
+  background-color: hsl(0, 0%, 80%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: hsl(0, 0%, 50%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 40%);
 }
 
 body {
   font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
+  overflow: auto;
+}
+
+body > div:first-child {
+  min-width: 375px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  color: var(--title-color);
   font-weight: var(--font-bold);
 }
 
@@ -88,10 +95,40 @@ a {
   text-decoration: none;
 }
 
+p {
+  line-height: 1.5;
+}
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #25171a;
+  -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset;
+  box-shadow: 0 0 0px 1000px #f5f5f5 inset;
+}
+
+input + label,
+textarea + label {
+  transition-duration: 400ms;
+  transition-property: transform;
+}
+
+input:focus + label,
+textarea:focus + label {
+  transform: translateY(-2rem);
 }
 
 /*=============== THEME ===============*/
@@ -104,64 +141,13 @@ img {
 ==========*/
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
 
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
 
-.section {
-  padding-block: 4rem 2rem;
-}
-
-.section__title-1,
-.section__title-2 {
-  position: relative;
-  font-size: var(--h1-font-size);
-  width: max-content;
-  margin: 0.75rem auto 2rem;
-}
-
-.section__title-1 span,
-.section__title-2 span {
-  z-index: 5;
-  position: relative;
-}
-
-.section__title-1::after,
-.section__title-2::after {
-  content: '';
-  width: 40px;
-  height: 28px;
-  background-color: hsla(14, 98%, 50%, 0.2);
-  position: absolute;
-  top: -4px;
-  right: -8px;
-}
-
-.section__title-2::after {
-  top: initial;
-  bottom: -4px;
-}
-
-.geometric-box {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: var(--first-color);
-  rotate: -30deg;
-}
-
-.geometric-box::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 3px solid var(--black-color);
-  left: -5px;
-  top: -5px;
+  100% {
+    transform: translate(-100%);
+  }
 }

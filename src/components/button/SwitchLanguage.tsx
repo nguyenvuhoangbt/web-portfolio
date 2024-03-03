@@ -4,19 +4,19 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useRouter } from 'next/router';
 import { styled } from '@mui/material';
 
-const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
-  '& .MuiToggleButtonGroup-grouped': {
-    border: 0,
-    '&:not(:first-of-type)': {
-      borderRadius: theme.shape.borderRadius,
-    },
-    '&:first-of-type': {
-      borderRadius: theme.shape.borderRadius,
-    },
-  },
+const ButtonGroupStyledToggle = styled(ToggleButtonGroup)(() => ({
+  // '& .MuiToggleButtonGroup-grouped': {
+  //   border: 0,
+  //   '&:not(:first-of-type)': {
+  //     borderRadius: 2,
+  //   },
+  //   '&:first-of-type': {
+  //     borderRadius: 2,
+  //   },
+  // },
 }));
 
-const SwitchLanguageButton = () => {
+const ButtonSwitchLanguage = () => {
   const router = useRouter();
 
   const [lang, setLang] = React.useState<string | null>(
@@ -24,7 +24,7 @@ const SwitchLanguageButton = () => {
   );
 
   const handleChangeLang = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     newLang: 'en' | 'vi' | 'zh' | null
   ) => {
     if (newLang !== null) {
@@ -33,26 +33,40 @@ const SwitchLanguageButton = () => {
     }
   };
 
+  const langList = [
+    {
+      value: 'en',
+      label: 'en',
+    },
+    {
+      value: 'zh',
+      label: '中',
+    },
+  ];
+
   return (
-    <StyledToggleButtonGroup
+    <ButtonGroupStyledToggle
       size="small"
       value={lang}
       exclusive
       onChange={handleChangeLang}
       aria-label="language switch"
-      w-h="8"
+      w-h="32px"
     >
-      <ToggleButton value="vi" aria-label="vi" w-w="10">
-        vi
-      </ToggleButton>
-      <ToggleButton value="en" aria-label="en" w-w="10">
-        en
-      </ToggleButton>
-      <ToggleButton value="zh" aria-label="zh" w-w="10">
-        zh
-      </ToggleButton>
-    </StyledToggleButtonGroup>
+      {langList.map(({ value, label }, i) => (
+        <ToggleButton
+          key={i}
+          value={value}
+          aria-label="en"
+          w-w="40px"
+          w-text="dark:white 14px"
+          w-hover="dark:bg-[#ffffff1a]"
+        >
+          {label}
+        </ToggleButton>
+      ))}
+    </ButtonGroupStyledToggle>
   );
 };
 
-export default SwitchLanguageButton;
+export default ButtonSwitchLanguage;
