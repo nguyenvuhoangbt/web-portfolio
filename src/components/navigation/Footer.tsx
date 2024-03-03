@@ -18,7 +18,8 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
         w-p="x-6 y-10 lg:x-20 y-15"
         w-grid="~ lg:cols-2"
         w-gap="y-10"
-        w-w-justify="lg:between"
+        w-justify="lg:between"
+        w-border="t-1 solid"
       >
         <ul w-flex="~" w-justify="center lg:start" w-gap="x-10">
           <li>
