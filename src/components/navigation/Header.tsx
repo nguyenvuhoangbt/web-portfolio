@@ -72,7 +72,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           w-align="items-center"
           w-font="bold"
         >
-          <span w-text="normal black sm:h3 dark:white">{lang.authorName}</span>
+          {lang.authorName}
         </Link>
 
         <div w-flex="~" w-gap="8">

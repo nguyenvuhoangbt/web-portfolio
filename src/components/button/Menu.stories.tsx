@@ -1,6 +1,6 @@
 import MenuButton from './Menu';
 import { MyButtonProps } from './MyButton';
-import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { mockMenuButtonProps } from './Menu.mocks';
 import { StyledEngineProvider } from '@mui/material/styles';
 
