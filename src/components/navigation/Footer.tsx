@@ -13,7 +13,7 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
   const lang = useTranslation();
 
   return (
-    <footer {...footerProps} w-bg="black">
+    <footer {...footerProps} w-bg="black" w-w="full">
       <div
         w-p="x-6 y-10 lg:x-20 y-15"
         w-grid="~ lg:cols-2"

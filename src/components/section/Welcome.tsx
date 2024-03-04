@@ -33,8 +33,14 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
   ];
 
   return (
-    <section w-p="y-88px x-16px" id="home" w-h="screen" w-w="full">
-      <div w-max-w="1120px" w-m="x-auto" w-grid="~" w-h="full">
+    <section
+      w-p="x-16px y-10 lg:y-20"
+      id="home"
+      w-m="t-66px lg:t-88px"
+      w-h="min"
+      w-w="full"
+    >
+      <div w-max-w="1184px" w-m="x-auto" w-grid="~" w-h="full" w-gap="10">
         <h1
           w-text="center 2rem md:2.5rem"
           w-font="bold"
@@ -67,7 +73,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
                 alt="Home Perfil"
                 fill={false}
                 w-pos="relative"
-                w-w="320px"
+                w-max-w="320px"
                 w-m="auto"
                 w-rounded="sm"
               />

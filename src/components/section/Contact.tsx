@@ -52,7 +52,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
       <div
         w-p="t-8"
         w-pos="relative"
-        w-max-w="1120px"
+        w-max-w="1184px"
         w-m="x-auto"
         w-align="self-center"
         className="lg:(grid grid-cols-[1fr,2fr]) xl:grid-cols-[360px,750px]"
@@ -78,7 +78,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-shadow="lg:contact-box"
           >
             <h2
-              w-text="3rem"
+              w-text="2rem md:3rem"
               w-m="xl:b-2"
               w-color="primary"
               w-font="bold"

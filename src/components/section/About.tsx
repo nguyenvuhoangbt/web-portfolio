@@ -19,16 +19,18 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
     <section
       id="about"
-      w-max-w="1120px"
+      w-max-w="1184px"
       w-w="screen"
       w-p="x-4 t-8"
       w-gap="y-4 x-0"
     >
       <div
-        w-max-w="950px"
+        w-w="max"
+        w-max-w="full lg:1184px"
         w-m="x-auto"
+        w-gap="x-6"
         w-grid="~"
-        className="<sm:(grid-rows-[1fr,auto] gap-y-4) sm:grid-cols-[200px,1fr] md:grid-cols-[320px,1fr] lg:grid-cols-[440px,1fr]"
+        className="<sm:(grid-rows-[1fr,auto] gap-y-4) sm:grid-cols-[200px,1fr] md:grid-cols-[320px,1fr] lg:grid-cols-[320px,650px]"
       >
         <InViewAnimation
           startX={120}
@@ -56,7 +58,6 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
             w-gap="4 md:10"
             w-justify="content-center"
             w-h="full"
-            w-p="sm:l-12"
           >
             <h2 w-text="2rem sm:3rem" w-font="bold leading-normal">
               {`${lang.aboutMeTitle}`}
@@ -64,7 +65,7 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
             <blockquote
               w-font="italic"
               w-pos="relative"
-              w-before="content-open-quote -top-20px -left-40px <sm:(-left-10px -top-10px) bg-[#cccccc4d] block w-30px h-30px text-2rem rounded-1/2 absolute pl-5px"
+              w-before="content-open-quote -top-20px left-0px <sm:(-left-10px -top-10px) bg-[#cccccc4d] block w-30px h-30px text-2rem rounded-1/2 absolute pl-5px"
               w-after="content-close-quote -bottom-10px -right-0px bg-[#cccccc4d] block w-30px h-30px text-2rem rounded-1/2 absolute pl-5px"
               style={{
                 fontFamily: fontQuicksand.style.fontFamily,
@@ -75,10 +76,13 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
                 w-m="b-6"
                 w-text="1rem md:1.125rem"
                 w-leading="!loose"
-                w-p="<sm:l-6"
+                w-p="l-8 sm:l-12"
                 className="break-words"
                 dangerouslySetInnerHTML={{
                   __html: lang.aboutMeDescription,
+                }}
+                style={{
+                  textWrap: 'balance',
                 }}
               ></p>
             </blockquote>
