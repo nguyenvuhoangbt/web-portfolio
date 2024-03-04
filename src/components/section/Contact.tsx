@@ -1,11 +1,6 @@
 // Assets
 import CurvedArrow from '@/assets/svg/curved-arrow.svg';
 
-// Icons
-import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-
 // Consts
 import { LangType } from '@/src/pages/app';
 import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';

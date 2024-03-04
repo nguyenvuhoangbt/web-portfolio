@@ -1,6 +1,6 @@
 // States & Hooks
 import NavigationContext from '@/src/state/navigation/NavigationContext';
-import useMetaTag from '@/src/hooks/useMetaTag';
+import useTranslation from '@/src/hooks/useTranslation';
 
 // Components
 import Header from '@/src/components/navigation/Header';
@@ -8,10 +8,14 @@ import Footer from '@/src/components/navigation/Footer';
 import MyButton from '@/src/components/button/MyButton';
 
 // Libraries
+import Head from 'next/head';
 import Link from 'next/link';
 import { Quicksand } from 'next/font/google';
 import { useRouter } from 'next/router';
 import { useContext, useEffect } from 'react';
+
+// Assets
+import OpenGraphImage from '@/public/opengraph-image.jpg';
 
 export const fontQuicksand = Quicksand({
   weight: ['500', '700'],
@@ -27,6 +31,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   items = 'center',
 }) => {
   useContext(NavigationContext);
+  const lang = useTranslation();
   const {
     isOpenMenu,
     isShadowHeader,
@@ -50,14 +55,17 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
     }
   };
 
-  const getMetaTag = useMetaTag();
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window?.removeEventListener('scroll', handleScroll);
   });
 
   const router = useRouter();
+
+  const title = `${lang.authorName} | ${lang.frontendDeveloper} | ${lang.portfolio}`;
+  const url = 'https://web-portfolio-lake-eight.vercel.app/';
+  const description =
+    'Explore my website portfolio, featuring modern designs and user-friendly interfaces. See how I blend creativity and functionality for memorable online experiences.';
 
   return (
     <>
@@ -74,7 +82,17 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
           }
         `}
       </style>
-      {getMetaTag}
+      <Head>
+        <meta charSet="utf-8" />
+        <title>{`${lang.authorName} | ${lang.frontendDeveloper} | ${lang.portfolio}`}</title>
+        <link rel="canonical" href={url} />
+        <meta name="description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={OpenGraphImage.src} />
+      </Head>
       <Header />
       <main
         className={`${
