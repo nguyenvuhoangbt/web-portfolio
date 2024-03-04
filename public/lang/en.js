@@ -1,11 +1,11 @@
 const messages = {
-  portfolio: 'Portfolio',
+  frontendDeveloper: 'Frontend Developer',
+  portfolio: 'Website Portfolio',
   welcome: 'Hi there, welcome to <br>my website.',
   authorName: 'Hector',
   aboutMeTitle: 'About me',
   aboutMeDescription:
     '<b>Frontend Developer,</b> expertise in responsive design, performance optimization and seamless UX. Committed to ongoing learning and innovation, eager to bring my skills to new projects.',
-
   servicesTitle: 'Services',
   designTitle: 'Design',
   webDesignContent:
@@ -33,7 +33,6 @@ const messages = {
   contactMeNote:
     ' I need your <b style="font-size: 1rem">Name</b> and <b style="font-size: 1rem">Email address</b>, you will not receive anything other than your reply.',
   sendMeMessage: 'Send me a message',
-  homeTitle: 'Home',
   firstName: 'First Name',
   emailAddress: 'Email Address',
   message: 'Message',

@@ -1,5 +1,6 @@
 const messages = {
-  portfolio: '作品集',
+  frontendDeveloper: '前端开发人员',
+  portfolio: '网站作品集',
   welcome: '你好，欢迎来到我的网站。',
   authorName: '阮武黄',
   aboutMeTitle: '关于我',
@@ -31,7 +32,6 @@ const messages = {
   contactMeNote:
     '我需要您的<b style="font-size: 1rem">姓名</b>和<b style="font-size: 1rem">电子邮件地址</b>，但除了您的回复外，您将不会收到任何其他内容。',
   sendMeMessage: '给我发信息',
-  homeTitle: '主页',
   firstName: '姓名',
   emailAddress: '电子邮件地址',
   message: '信息',

@@ -36,9 +36,8 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
     <section
       id="projects"
-      w-p="y-8"
-      w-max-w="1120px"
-      w-m="x-4 sm:x-6"
+      w-p="x-4 y-8"
+      w-max-w="1184px"
       w-grid="~"
       w-gap="4 md:10"
     >
