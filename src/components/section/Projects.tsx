@@ -12,7 +12,7 @@ import ProjectCard from '@/src/components/card/Project';
 import { capitalize } from 'lodash-es';
 
 // States & Hooks
-import InViewAnimation from '@/src/hooks/UseInViewAnimation';
+import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
   const projectList = [

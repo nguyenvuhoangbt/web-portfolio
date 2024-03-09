@@ -1,6 +1,6 @@
 // States & Hooks
 import NavigationContext from '@/src/state/navigation/NavigationContext';
-import UseTranslation from '@/src/hooks/UseTranslation';
+import useTranslation from '@/src/hooks/useTranslation';
 
 // Components
 import Header from '@/src/components/navigation/Header';
@@ -30,7 +30,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   items = 'center',
 }) => {
   useContext(NavigationContext);
-  const lang = UseTranslation();
+  const lang = useTranslation();
   const {
     isOpenMenu,
     isShadowHeader,

@@ -13,7 +13,7 @@ import Image from 'next/image';
 import { easings } from '@react-spring/web';
 
 // States & Hooks
-import InViewAnimation from '@/src/hooks/UseInViewAnimation';
+import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (

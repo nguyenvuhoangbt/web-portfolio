@@ -1,5 +1,5 @@
 // States & Hooks
-import Provider from '@/src/hooks/UseProvider';
+import Provider from '@/src/hooks/useProvider';
 
 // Libraries
 import '@/public/globals.css';

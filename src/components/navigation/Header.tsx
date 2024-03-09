@@ -3,7 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 // States & Hooks
 import NavigationContext from '@/src/state/navigation/NavigationContext';
-import UseTranslation from '@/src/hooks/UseTranslation';
+import useTranslation from '@/src/hooks/useTranslation';
 
 // Components
 import ButtonMenu from '@/src/components/button/Menu';
@@ -20,7 +20,7 @@ export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 const Header: React.FC<IHeader> = ({ ...headerProps }) => {
   const { isOpenMenu, handleSetIsOpenMenu, isShadowHeader } =
     useContext(NavigationContext);
-  const lang = UseTranslation();
+  const lang = useTranslation();
 
   const sectionList = [
     {

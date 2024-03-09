@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 // States & Hooks
-import UseTranslation from '@/src/hooks/UseTranslation';
+import useTranslation from '@/src/hooks/useTranslation';
 
 // Consts
 import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';
@@ -10,7 +10,7 @@ import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';
 export interface IFooter extends React.ComponentPropsWithoutRef<'footer'> {}
 
 const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
-  const lang = UseTranslation();
+  const lang = useTranslation();
 
   return (
     <footer {...footerProps} w-bg="black" w-w="full">

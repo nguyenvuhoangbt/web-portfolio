@@ -6,7 +6,7 @@ import Fade from '@mui/material/Fade';
 import MyButton from '@/src/components/button/MyButton';
 
 // States & Hooks
-import UseTranslation from '@/src/hooks/UseTranslation';
+import useTranslation from '@/src/hooks/useTranslation';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -25,7 +25,7 @@ const TransitionsModal: React.FC<{
   onClose: () => void;
   onConfirm?: () => void;
 }> = ({ open, onClose, onConfirm }) => {
-  const lang = UseTranslation();
+  const lang = useTranslation();
   return (
     <Modal
       aria-labelledby="transition-modal-title"

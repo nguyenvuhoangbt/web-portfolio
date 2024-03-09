@@ -7,7 +7,7 @@ import Link from 'next/link';
 import React from 'react';
 
 // States & Hooks
-import UseTranslation from '@/src/hooks/UseTranslation';
+import useTranslation from '@/src/hooks/useTranslation';
 
 export interface ProjectCardProps {
   imageSrc: StaticImageData;
@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   content,
   link,
 }: ProjectCardProps) => {
-  const lang = UseTranslation();
+  const lang = useTranslation();
   return (
     <article w-pos="relative" w-flex="~ col" w-gap="4">
       <div

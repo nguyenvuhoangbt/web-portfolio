@@ -1,5 +1,5 @@
 // States & Hooks
-import UseTranslation from '@/src/hooks/UseTranslation';
+import useTranslation from '@/src/hooks/useTranslation';
 
 // Consts
 import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';
@@ -32,7 +32,7 @@ const ContactForm = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const lang = UseTranslation();
+  const lang = useTranslation();
   const router = useRouter();
 
   const openConfirmModal = (event: FormEvent<HTMLFormElement>) => {

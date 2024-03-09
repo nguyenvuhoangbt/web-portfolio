@@ -7,16 +7,16 @@ import SectionProjects from '@/src/components/section/Projects';
 import SectionContact from '@/components/section/Contact';
 
 // States & Hooks
-import UseTranslation from '@/src/hooks/UseTranslation';
+import useTranslation from '@/src/hooks/useTranslation';
 
 // Libraries
 import { NextPageWithLayout } from '@/src/pages/app';
 
 // States & Hooks
-import InViewAnimation from '@/src/hooks/UseInViewAnimation';
+import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 const Home: NextPageWithLayout = () => {
-  const lang = UseTranslation();
+  const lang = useTranslation();
 
   return (
     <>

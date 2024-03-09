@@ -11,7 +11,7 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
 
 // States & Hooks
-import InViewAnimation from '@/src/hooks/UseInViewAnimation';
+import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 const SectionService: React.FC<{ lang: LangType }> = ({ lang }) => {
   const serviceList = [

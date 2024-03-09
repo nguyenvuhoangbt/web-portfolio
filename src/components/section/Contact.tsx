@@ -9,7 +9,7 @@ import MyButton from '@/src/components/button/MyButton';
 import ContactForm from '@/src/components/form/ContactForm';
 
 // States & Hooks
-import InViewAnimation from '@/src/hooks/UseInViewAnimation';
+import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 // Libraries
 import Link from 'next/link';
