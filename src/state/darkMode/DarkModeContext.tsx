@@ -8,6 +8,9 @@ import {
   createTheme,
 } from '@mui/material';
 
+// Consts
+import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';
+
 interface IDarkModeContext {
   mode: PaletteMode;
   toggleColorMode: () => void;
@@ -63,6 +66,22 @@ export const DarkModeProvider: React.FC<DarkModeProviderProps> = ({
                 main: colors.primary,
               },
             }),
+      },
+      typography: {
+        fontFamily: [
+          fontQuicksand.style.fontFamily,
+          '-apple-system',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+        ].join(','),
       },
     } as ThemeOptions);
 

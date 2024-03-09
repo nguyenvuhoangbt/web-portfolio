@@ -26,7 +26,7 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
             <Link
               href="#about"
               w-text="white"
-              w-transition="duration-300"
+              w-transition="duration-300 colors"
               w-hover="text-$text-color-light"
             >
               {lang.aboutMeTitle}
@@ -36,7 +36,7 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
             <Link
               href="#services"
               w-text="white"
-              w-transition="duration-300"
+              w-transition="duration-300 colors"
               w-hover="text-$text-color-light"
             >
               {lang.servicesTitle}
@@ -46,7 +46,7 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
             <Link
               href="#projects"
               w-text="white"
-              w-transition="duration-300"
+              w-transition="duration-300 colors"
               w-hover="text-$text-color-light"
             >
               {lang.projectsTitle}

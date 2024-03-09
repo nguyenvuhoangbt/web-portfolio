@@ -3,45 +3,34 @@ import CurvedArrow from '@/assets/svg/curved-arrow.svg';
 
 // Consts
 import { LangType } from '@/src/pages/app';
-import { fontQuicksand } from '@/src/components/layouts/primary/PrimaryLayout';
 
 // Components
 import MyButton from '@/src/components/button/MyButton';
+import ContactForm from '@/src/components/form/ContactForm';
 
 // States & Hooks
 import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 // Libraries
 import Link from 'next/link';
-import TextareaAutosize from 'react-textarea-autosize';
-import { useState } from 'react';
 import { easings } from '@react-spring/web';
 
-const initialForm = {
-  firstName: '',
-  email: '',
-  message: '',
-};
-
-const maxMessageLength = 3000;
+const contactList = [
+  {
+    href: 'https://www.linkedin.com/in/nguyenvuhoangbt/',
+    icon: 'LinkedIn',
+  },
+  {
+    href: 'https://github.com/nguyenvuhoangbt/',
+    icon: 'GitHub',
+  },
+  {
+    href: 'mailto:nguyenvuhoangbt@gmail.com',
+    icon: 'Email',
+  },
+];
 
 const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
-  const [form, setForm] = useState(initialForm);
-  const contactList = [
-    {
-      href: 'https://www.linkedin.com/in/nguyenvuhoangbt/',
-      icon: 'LinkedIn',
-    },
-    {
-      href: 'https://github.com/nguyenvuhoangbt/',
-      icon: 'GitHub',
-    },
-    {
-      href: 'mailto:nguyenvuhoangbt@gmail.com',
-      icon: 'Email',
-    },
-  ];
-
   return (
     <section id="contact" w-min-w="lg:full" w-max-w="1168px" w-p="b-20 lg:x-6">
       <div
@@ -108,185 +97,10 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
           duration={1500}
           easing={easings.easeOutExpo}
           w-grid="lg:(col-start-2 col-end-3 row-start-1 row-end-3)"
+          w-pos="relative"
+          w-h="<lg:460px"
         >
-          <div
-            w-w="full"
-            w-h="full"
-            w-pos="relative"
-            w-bg="gray dark:darkGray"
-            w-p="x-4 y-10 sm:x-6 xl:20"
-          >
-            <h3 w-text="center 1.25em" w-font="bold" w-m="b-4">
-              {lang.sendMeMessage}
-            </h3>
-
-            <form
-              action=""
-              id="contact__form"
-              w-grid="~"
-              w-gap="y-[1.25em]"
-              w-pos="relative"
-            >
-              <div w-grid="~" w-gap="y-[1.25em]">
-                <div
-                  w-pos="relative"
-                  w-w="full"
-                  w-h="15"
-                  w-border="~ 2 rounded-sm $black-color-light"
-                >
-                  <input
-                    id="name"
-                    type="text"
-                    name="first-name"
-                    autoComplete="first-name"
-                    required
-                    maxLength={50}
-                    value={form.firstName}
-                    onChange={(event) => {
-                      setForm({
-                        ...form,
-                        firstName: event.target.value,
-                      });
-                    }}
-                    w-outline="none"
-                    w-pos="absolute"
-                    w-w="full"
-                    w-h="full"
-                    w-bg="gray dark:darkGray"
-                    w-p="4"
-                    w-font="medium"
-                    style={{
-                      fontFamily: fontQuicksand.style.fontFamily,
-                      letterSpacing: 0,
-                    }}
-                  />
-                  <label
-                    htmlFor="name"
-                    w-pos="absolute top-18px left-10px"
-                    w-text="$black-color-light small dark:white"
-                    w-font="medium"
-                    w-bg="gray dark:darkGray"
-                    w-p="x-2"
-                    w-pointer="none"
-                    w-transform={form.firstName.length && '~ -translate-y-2em'}
-                  >
-                    {lang.firstName}
-                  </label>
-                </div>
-                <div
-                  w-pos="relative"
-                  w-w="full"
-                  w-h="15"
-                  w-border="~ 2 rounded-sm $black-color-light"
-                >
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    autoComplete="email"
-                    required
-                    maxLength={100}
-                    value={form.email}
-                    onChange={(event) => {
-                      setForm({
-                        ...form,
-                        email: event.target.value,
-                      });
-                    }}
-                    w-outline="none"
-                    w-pos="absolute"
-                    w-w="full"
-                    w-h="full"
-                    w-bg="gray dark:darkGray"
-                    w-p="4"
-                    w-font="medium"
-                    style={{
-                      fontFamily: fontQuicksand.style.fontFamily,
-                      letterSpacing: 0,
-                    }}
-                  />
-                  <label
-                    htmlFor="email"
-                    w-pos="absolute top-18px left-10px"
-                    w-text="$black-color-light small dark:white"
-                    w-font="medium"
-                    w-bg="gray dark:darkGray"
-                    w-p="x-2"
-                    w-pointer="none"
-                    w-transform={form.email.length && '~ -translate-y-2em'}
-                  >
-                    {lang.emailAddress}
-                  </label>
-                </div>
-                <div
-                  w-w="full"
-                  w-outline="none"
-                  w-pos="relative"
-                  w-bg="gray dark:darkGray"
-                  w-p="4"
-                  w-border="~ 2 rounded-sm $black-color-light"
-                >
-                  <TextareaAutosize
-                    name="user__message"
-                    id="message"
-                    className="resize-none"
-                    required
-                    value={form.message}
-                    onChange={(event) => {
-                      setForm({
-                        ...form,
-                        message: event.target.value,
-                      });
-                    }}
-                    minRows={3}
-                    maxRows={10}
-                    maxLength={maxMessageLength}
-                    w-outline="none"
-                    w-w="full"
-                    w-h="full"
-                    w-bg="gray dark:darkGray"
-                    w-font="medium"
-                    w-text="1rem"
-                    style={{
-                      fontFamily: fontQuicksand.style.fontFamily,
-                      letterSpacing: 0,
-                    }}
-                  />
-                  <label
-                    htmlFor="message"
-                    w-pos="absolute top-18px left-10px"
-                    w-text="$black-color-light small dark:white"
-                    w-font="medium"
-                    w-bg="gray dark:darkGray"
-                    w-p="x-2"
-                    w-pointer="none"
-                    w-transform={form.message.length && '~ -translate-y-2em'}
-                  >
-                    {lang.message}
-                  </label>
-                  <span
-                    w-float="right"
-                    w-text="small $black-color-light"
-                    style={{
-                      fontFamily: fontQuicksand.style.fontFamily,
-                      letterSpacing: 0,
-                    }}
-                  >
-                    {`${form.message.length} / ${maxMessageLength}`}
-                  </span>
-                </div>
-                <MyButton
-                  type="submit"
-                  icon="Send"
-                  text={lang.sendMessage}
-                  w-bg="primary"
-                  w-rounded="sm"
-                  w-w="max"
-                  w-m="auto sm:0"
-                />
-              </div>
-            </form>
-          </div>
+          <ContactForm />
         </InViewAnimation>
 
         <InViewAnimation rootMargin="-30% 0%">

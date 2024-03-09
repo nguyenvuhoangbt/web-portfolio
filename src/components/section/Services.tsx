@@ -1,5 +1,5 @@
 // Components
-import SeviceCard from '@/src/components/cards/Service';
+import SeviceCard from '@/src/components/card/Service';
 
 // Consts
 import { LangType } from '@/src/pages/app';

@@ -5,7 +5,7 @@ import { NavigationProvider } from '@/src/state/navigation/NavigationContext';
 import { MyButtonProps } from './MyButton';
 
 const ButtonMenu: React.FC<MyButtonProps> = () => {
-  const { setIsOpenMenu } = useContext(NavigationContext);
+  const { handleSetIsOpenMenu } = useContext(NavigationContext);
 
   return (
     <NavigationProvider>
@@ -13,7 +13,7 @@ const ButtonMenu: React.FC<MyButtonProps> = () => {
         className="w-35px lg:hidden"
         icon="Menu"
         onClick={() => {
-          setIsOpenMenu(true);
+          handleSetIsOpenMenu(true);
         }}
       />
     </NavigationProvider>
