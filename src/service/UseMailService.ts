@@ -57,6 +57,7 @@ const UseMailService = async (
     template: `email-from-guest`,
     context: {
       guestName: toName,
+      guestEmail: toEmail,
       message,
     },
     viewEngine: {
