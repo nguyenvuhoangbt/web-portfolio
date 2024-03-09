@@ -2,7 +2,7 @@ import { ReactNode, createContext, useState } from 'react';
 
 interface INavigationContext {
   isOpenMenu: boolean;
-  setIsOpenMenu: (_isOpenMenu: boolean) => void;
+  handleSetIsOpenMenu: (_isOpenMenu: boolean) => void;
   isShadowHeader: boolean;
   setIsShadowHeader: (_isShadowHeader: boolean) => void;
   isShowScrollUp: boolean;
@@ -11,7 +11,8 @@ interface INavigationContext {
 
 const defaultValue: INavigationContext = {
   isOpenMenu: false,
-  setIsOpenMenu: () => undefined,
+  handleSetIsOpenMenu: () => undefined,
+  // setIsOpenMenu: () => undefined,
   isShadowHeader: false,
   setIsShadowHeader: () => undefined,
   isShowScrollUp: false,
@@ -31,11 +32,20 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({
   const [isShadowHeader, setIsShadowHeader] = useState(false);
   const [isShowScrollUp, setIsShowScrollUp] = useState(false);
 
+  const handleSetIsOpenMenu = (flag: boolean) => {
+    setIsOpenMenu(flag);
+    if (flag) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  };
+
   return (
     <NavigationContext.Provider
       value={{
         isOpenMenu,
-        setIsOpenMenu,
+        handleSetIsOpenMenu,
         isShadowHeader,
         setIsShadowHeader,
         isShowScrollUp,

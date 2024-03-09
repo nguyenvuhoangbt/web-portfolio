@@ -6,13 +6,13 @@ import ComingSoon from '@/assets/img/coming-soon.jpg';
 import { LangType } from '@/src/pages/app';
 
 // Components
-import ProjectCard from '@/src/components/cards/Project';
+import ProjectCard from '@/src/components/card/Project';
 
 // Libraries
 import { capitalize } from 'lodash-es';
 
 // States & Hooks
-import InViewAnimation from '@/src/hooks/useInViewAnimation';
+import InViewAnimation from '@/src/hooks/UseInViewAnimation';
 
 const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
   const projectList = [

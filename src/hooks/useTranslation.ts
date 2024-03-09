@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import en from '@/public/lang/en.js';
 import zh from '@/public/lang/zh.js';
 
-const useTranslation = () => {
+const UseTranslation = () => {
   const { locale } = useRouter();
 
   if (locale === 'zh') return zh;
@@ -10,4 +10,4 @@ const useTranslation = () => {
   return en;
 };
 
-export default useTranslation;
+export default UseTranslation;

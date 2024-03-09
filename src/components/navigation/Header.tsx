@@ -1,11 +1,9 @@
-// Assets
-
 // Icons
 import CloseIcon from '@mui/icons-material/Close';
 
 // States & Hooks
 import NavigationContext from '@/src/state/navigation/NavigationContext';
-import useTranslation from '@/src/hooks/useTranslation';
+import UseTranslation from '@/src/hooks/UseTranslation';
 
 // Components
 import ButtonMenu from '@/src/components/button/Menu';
@@ -20,9 +18,9 @@ import { IconButton } from '@mui/material';
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
 const Header: React.FC<IHeader> = ({ ...headerProps }) => {
-  const { isOpenMenu, setIsOpenMenu, isShadowHeader } =
+  const { isOpenMenu, handleSetIsOpenMenu, isShadowHeader } =
     useContext(NavigationContext);
-  const lang = useTranslation();
+  const lang = UseTranslation();
 
   const sectionList = [
     {
@@ -50,7 +48,9 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
       w-h="$header-height"
       w-w="full"
       w-min-w="375px"
+      w-p="x-2"
       w-z="fixed"
+      w-m="-l-8px"
       w-transition="shadow duration-1000"
       w-flex="~"
       w-items="center"
@@ -60,7 +60,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
         w-pos="relative"
         w-w="full"
         w-h="full"
-        w-p="x-4"
+        w-p="l-4 r-2"
         w-flex="~"
         w-justify="between"
         w-align="items-center"
@@ -73,6 +73,8 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           w-align="items-center"
           w-font="bold"
           w-text="1.5rem"
+          w-h="full"
+          onClick={() => document.body.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           {lang.authorName}
         </Link>
@@ -119,7 +121,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
                     w-text="white lg:black dark:white <lg:1.5rem"
                     w-font="bold"
                     w-p="4"
-                    onClick={() => setIsOpenMenu(false)}
+                    onClick={() => handleSetIsOpenMenu(false)}
                   >
                     {title}
                   </Link>
@@ -131,7 +133,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
               className="top-14px right-14px"
               aria-label="delete"
               onClick={() => {
-                setIsOpenMenu(false);
+                handleSetIsOpenMenu(false);
               }}
               w-pos="absolute"
               w-text="$white-color"

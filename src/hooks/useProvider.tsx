@@ -12,10 +12,10 @@ const compose = (providers: ProviderType[]) => {
     );
 };
 
-const useProvider = compose([
+const UseProvider = compose([
   AuthProvider,
   DarkModeProvider,
   NavigationProvider,
 ]);
 
-export default useProvider;
+export default UseProvider;

@@ -39,6 +39,13 @@ const messages = {
   sendMessage: 'Send Message',
   notSendEmail: 'Does not sent emails',
   writeSocialNetwork: 'Write me on my social networks',
+  thankYou: 'Thank you.',
+  confirmation: 'Confirmation',
+  confirmationMessageModal: 'Are you sure you want to send this message?',
+  confirmationNoteModal:
+    'Note: Your email address will not be stored. Please kindly check your inbox later.',
+  yes: 'Yes',
+  no: 'No',
 };
 
 export default messages;

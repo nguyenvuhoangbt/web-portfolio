@@ -1,6 +1,6 @@
 // States & Hooks
 import NavigationContext from '@/src/state/navigation/NavigationContext';
-import useTranslation from '@/src/hooks/useTranslation';
+import UseTranslation from '@/src/hooks/UseTranslation';
 
 // Components
 import Header from '@/src/components/navigation/Header';
@@ -9,7 +9,6 @@ import MyButton from '@/src/components/button/MyButton';
 
 // Libraries
 import Head from 'next/head';
-import Link from 'next/link';
 import { Quicksand } from 'next/font/google';
 import { useRouter } from 'next/router';
 import { useContext, useEffect } from 'react';
@@ -31,7 +30,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   items = 'center',
 }) => {
   useContext(NavigationContext);
-  const lang = useTranslation();
+  const lang = UseTranslation();
   const {
     isOpenMenu,
     isShadowHeader,
@@ -40,24 +39,27 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
     setIsShowScrollUp,
   } = useContext(NavigationContext);
 
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
+  const handleScroll = (event: Event) => {
+    const { target } = event;
+    const currentPositionTop = (target as HTMLElement)?.scrollTop;
+
+    if (currentPositionTop > 0) {
       !isShadowHeader && setIsShadowHeader(true);
     }
-    if (window.scrollY <= 0) {
+    if (currentPositionTop <= 0) {
       isShadowHeader && setIsShadowHeader(false);
     }
-    if (window.scrollY > 350) {
+    if (currentPositionTop > 350) {
       !isShowScrollUp && setIsShowScrollUp(true);
     }
-    if (window.scrollY <= 350) {
+    if (currentPositionTop <= 350) {
       isShowScrollUp && setIsShowScrollUp(false);
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window?.removeEventListener('scroll', handleScroll);
+    document.body.addEventListener('scroll', handleScroll);
+    return () => document.body.removeEventListener('scroll', handleScroll);
   });
 
   const router = useRouter();
@@ -95,36 +97,31 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
       </Head>
       <Header />
       <main
-        className={`${
-          isOpenMenu ? '<lg:overflow-hidden !scrollbar-hide' : '!scrollbar-hide'
-        }`}
         id="main"
         w-flex="~ col"
-        w-h="screen"
+        w-h="max"
         w-items={`${items}`}
         w-bg="dark:black"
-        w-overflow="auto"
         w-text="black dark:white"
+        w-overflow="hidden"
       >
         {children}
         <Footer />
       </main>
 
       {isOpenMenu ? null : (
-        <Link
-          href="#"
-          className={`${isShowScrollUp ? '' : 'translate-y-100'}`}
+        <MyButton
+          className={`${
+            isShowScrollUp ? 'w-8 h-8' : 'translate-y-100 w-8 h-8'
+          }`}
           w-pos="fixed right-4 bottom-10"
           w-transform="~"
           w-transition="~ duration-500"
           w-z="fixed"
-        >
-          <MyButton
-            className="w-8 h-8"
-            icon="ArrowDropUp"
-            iconClassName="text-h2"
-          />
-        </Link>
+          icon="ArrowDropUp"
+          iconClassName="text-h2"
+          onClick={() => document.body.scrollTo({ top: 0, behavior: 'smooth' })}
+        />
       )}
     </>
   );

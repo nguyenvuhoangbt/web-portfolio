@@ -38,6 +38,13 @@ const messages = {
   sendMessage: '发信息',
   notSendEmail: '不发送电子邮件',
   writeSocialNetwork: '在我的社交网络上给我写信',
+  thankYou: '谢谢。',
+  confirmation: '确认',
+  confirmationMessageModal: '您确定要发送此消息吗？',
+  confirmationNoteModal:
+    '注意：您的电子邮件地址将不会被存储。请稍后检查您的收件箱。',
+  yes: '确定',
+  no: '取消',
 };
 
 export default messages;

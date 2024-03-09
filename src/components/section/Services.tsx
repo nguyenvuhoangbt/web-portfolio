@@ -1,5 +1,5 @@
 // Components
-import SeviceCard from '@/src/components/cards/Service';
+import SeviceCard from '@/src/components/card/Service';
 
 // Consts
 import { LangType } from '@/src/pages/app';
@@ -11,7 +11,7 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
 
 // States & Hooks
-import InViewAnimation from '@/src/hooks/useInViewAnimation';
+import InViewAnimation from '@/src/hooks/UseInViewAnimation';
 
 const SectionService: React.FC<{ lang: LangType }> = ({ lang }) => {
   const serviceList = [
