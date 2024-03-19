@@ -46,7 +46,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h3 w-text="h3" w-font="bold">
           {title}
         </h3>
-        <p w-m="y-4">{content}</p>
+        <p w-m="y-4" w-h="md:6rem" className="md:line-clamp-4">
+          {content}
+        </p>
         {link && (
           <Link href={link} target="_blank">
             <MyButton icon="Visibility" text={lang.view}></MyButton>
