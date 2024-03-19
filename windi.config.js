@@ -1,5 +1,6 @@
 import filters from 'windicss/plugin/filters';
 import aspect from 'windicss/plugin/aspect-ratio';
+import lineclamp from 'windicss/plugin/line-clamp';
 import scrollSnapPlugin from 'windicss/plugin/scroll-snap';
 import { defineConfig } from 'windicss/helpers';
 import { colors } from './windi.config.color';
@@ -47,5 +48,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [filters, aspect, scrollSnapPlugin],
+  plugins: [filters, aspect, scrollSnapPlugin, lineclamp],
 });

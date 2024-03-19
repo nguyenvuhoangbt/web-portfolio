@@ -46,6 +46,9 @@ const messages = {
     'Note: Your email address will not be stored. Please kindly check your inbox later.',
   yes: 'Yes',
   no: 'No',
+  demoReactThree: 'Demo React + ThreeJS',
+  demoReactThreeContent:
+    'Experience the fusion of React and Three.js, where stunning 3D graphics meet the power of React components. Dive into interactive environments, explore dynamic visuals, and unlock new possibilities in web experiences.',
 };
 
 export default messages;
