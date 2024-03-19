@@ -1,5 +1,6 @@
 // Assets
 import Dghome3d from '@/assets/img/dghome3d.png';
+import Monster from '@/assets/img/monster.png';
 import ComingSoon from '@/assets/img/coming-soon.jpg';
 
 // Consts
@@ -23,6 +24,14 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
       title: `${capitalize(lang.website)} dghome3d.com`,
       content: lang.dghome3dContent,
       link: 'https://dghome3d.com/',
+    },
+    {
+      imageSrc: Monster,
+      imageAlt: lang.demoReactThree,
+      imageClassName: '',
+      title: lang.demoReactThree,
+      content: lang.demoReactThreeContent,
+      link: 'https://monster-git-main-nguyenvuhoangbts-projects.vercel.app/',
     },
     {
       imageSrc: ComingSoon,

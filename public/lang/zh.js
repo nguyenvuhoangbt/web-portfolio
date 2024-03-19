@@ -45,6 +45,9 @@ const messages = {
     '注意：您的电子邮件地址将不会被存储。请稍后检查您的收件箱。',
   yes: '确定',
   no: '取消',
+  demoReactThree: 'Demo React + ThreeJS',
+  demoReactThreeContent:
+    '体验『React』和『Three.js』的融合，令惊艳的3D图形与『React』组件的力量相遇。沉浸于交互式环境中，探索动态视觉效果，解锁网站体验中的新可能性。',
 };
 
 export default messages;
