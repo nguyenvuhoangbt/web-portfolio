@@ -1,6 +1,6 @@
 // Assets
 import Dghome3d from '@/assets/img/dghome3d.png';
-import Monster from '@/assets/img/monster.png';
+import DemoThreejs from '@/assets/img/demo-threejs.png';
 import ComingSoon from '@/assets/img/coming-soon.jpg';
 
 // Consts
@@ -26,7 +26,7 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
       link: 'https://dghome3d.com/',
     },
     {
-      imageSrc: Monster,
+      imageSrc: DemoThreejs,
       imageAlt: lang.demoReactThree,
       imageClassName: '',
       title: lang.demoReactThree,
