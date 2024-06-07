@@ -17,13 +17,7 @@ import InViewAnimation from '@/src/hooks/useInViewAnimation';
 
 const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
   return (
-    <section
-      id="about"
-      w-max-w="1184px"
-      w-w="screen"
-      w-p="x-4 t-8"
-      w-gap="y-4 x-0"
-    >
+    <section id="about" w-max-w="1184px" w-w="screen" w-p="x-4" w-gap="y-4 x-0">
       <div
         w-w="max"
         w-max-w="full lg:1184px"
@@ -37,15 +31,18 @@ const SectionAbout: React.FC<{ lang: LangType }> = ({ lang }) => {
           duration={1500}
           easing={easings.easeOutExpo}
         >
-          <Image
-            src={AboutPerfil}
-            alt="About Perfil"
-            fill={false}
+          <div
             w-pos="relative"
             w-max-w="full sm:200px md:320px"
             w-m="lg:x-auto"
-            w-rounded="md"
-          />
+          >
+            <Image
+              src={AboutPerfil}
+              alt="About Perfil"
+              fill={false}
+              w-rounded="md"
+            />
+          </div>
         </InViewAnimation>
 
         <InViewAnimation

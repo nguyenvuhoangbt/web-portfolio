@@ -110,12 +110,14 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
                   w-gap="1"
                   w-items="center"
                   w-text="smaller"
+                  aria-label={`Link to my ${icon}`}
                 >
                   <div
                     style={{
                       fontFamily: fontQuicksand.style.fontFamily,
                       letterSpacing: 0,
                     }}
+                    w-hover="underline"
                   >
                     {text}
                   </div>
@@ -127,6 +129,7 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
                     w-bg="transparent"
                     w-shadow="none"
                     w-hover="bg-white dark:bg-black shadow-none"
+                    aria-label={icon}
                   ></MyButton>
                 </Link>
               ))}

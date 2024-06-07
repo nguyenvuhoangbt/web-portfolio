@@ -12,6 +12,7 @@ const ButtonMenu: React.FC<MyButtonProps> = () => {
       <MyButton
         className="w-35px lg:hidden"
         icon="Menu"
+        aria-label="Menu"
         onClick={() => {
           handleSetIsOpenMenu(true);
         }}
