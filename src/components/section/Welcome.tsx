@@ -68,19 +68,17 @@ const SectionWelcome: React.FC<{ lang: LangType }> = ({ lang }) => {
               w-bg="white dark:black"
               w-z="1"
             >
-              <picture>
-                <Image
-                  src={HomePerfil}
-                  alt="Home Perfil"
-                  fill={false}
-                  w-pos="relative"
-                  w-max-w="320px"
-                  w-m="auto"
-                  w-rounded="sm"
-                  priority={false}
-                  loading="lazy"
-                />
-              </picture>
+              <Image
+                src={HomePerfil}
+                alt="Home Perfil"
+                fill={false}
+                w-pos="relative"
+                w-max-w="320px"
+                w-m="auto"
+                w-rounded="sm"
+                priority={false}
+                loading="lazy"
+              />
             </div>
             <RandomLines
               w-pos="absolute right-0 top-0"
