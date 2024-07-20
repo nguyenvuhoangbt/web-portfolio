@@ -121,6 +121,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
           icon="ArrowDropUp"
           iconClassName="text-h2"
           onClick={() => document.body.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Scroll to top"
         />
       )}
     </>

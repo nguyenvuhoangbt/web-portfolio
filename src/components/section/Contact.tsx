@@ -139,6 +139,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                     w-transition="duration-300"
                     w-transform="~"
                     w-hover="-translate-y-8px"
+                    aria-label={`Link to my ${icon}`}
                   >
                     <MyButton
                       icon={icon}
@@ -148,6 +149,7 @@ const SectionContact: React.FC<{ lang: LangType }> = ({ lang }) => {
                       w-bg="transparent"
                       w-text="white xl:biggest"
                       w-transition="duration-300"
+                      aria-label={icon}
                     ></MyButton>
                   </Link>
                 ))}
