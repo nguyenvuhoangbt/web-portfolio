@@ -49,6 +49,9 @@ const messages = {
   demoReactThree: 'Demo React + ThreeJS',
   demoReactThreeContent:
     'Experience the fusion of React and Three.js, where stunning 3D graphics meet the power of React components. Dive into interactive environments, explore dynamic visuals, and unlock new possibilities in web experiences.',
+  parallaxEffect: 'Demo Parallax Effect',
+  parallaxEffectContent:
+    'An engaging parallax scrolling demo using Nuxt 3, TailwindCSS, and GSAP. The goal was to create a visually appealing and smooth user experience with dynamic animations.',
 };
 
 export default messages;

@@ -37,6 +37,8 @@ const nextConfig = {
     ],
   },
   transpilePackages: ['@mui/icons-material'],
+  productionBrowserSourceMaps: true,
 };
 
 module.exports = nextConfig;
+// module.exports = withBundleAnalyzer(nextConfig);

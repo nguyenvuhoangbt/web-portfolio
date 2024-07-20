@@ -48,6 +48,9 @@ const messages = {
   demoReactThree: 'Demo React + ThreeJS',
   demoReactThreeContent:
     '体验『React』和『Three.js』的融合，令惊艳的3D图形与『React』组件的力量相遇。沉浸于交互式环境中，探索动态视觉效果，解锁网站体验中的新可能性。',
+  parallaxEffect: 'Demo Parallax Effect',
+  parallaxEffectContent:
+    '使用 Nuxt 3、TailwindCSS 和 GSAP 制作的引人入胜的视差滚动演示。目标是创建一个视觉上吸引人且流畅的用户体验，并包含动态动画',
 };
 
 export default messages;

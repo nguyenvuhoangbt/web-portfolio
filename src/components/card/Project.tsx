@@ -32,14 +32,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <article w-pos="relative" w-flex="~ col" w-gap="4">
       <div
         w-flex="~"
-        w-max-h="md:310px"
+        // w-max-h="md:310px"
         w-border="4 rounded-md black dark:white"
       >
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill={false}
-          className={imageClassName}
+          className={imageClassName + ' aspect-video object-cover'}
         />
       </div>
       <div>
