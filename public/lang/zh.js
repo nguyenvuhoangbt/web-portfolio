@@ -51,6 +51,9 @@ const messages = {
   parallaxEffect: 'Demo Parallax Effect',
   parallaxEffectContent:
     '使用 Nuxt 3、TailwindCSS 和 GSAP 制作的引人入胜的视差滚动演示。目标是创建一个视觉上吸引人且流畅的用户体验，并包含动态动画',
+  carousel: 'Demo Carousel',
+  carouselContent:
+    '一个使用Next.js构建的互动图片轮播，使用Tailwind CSS进行样式设计，并使用GSAP进行动画制作。用户可以点击滑动图片，每次过渡都会顺畅地更改图片和背景。',
 };
 
 export default messages;
