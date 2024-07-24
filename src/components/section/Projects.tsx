@@ -3,6 +3,7 @@ import Dghome3d from '@/assets/img/dghome3d.png';
 import DemoThreejs from '@/assets/img/demo-threejs.png';
 import ComingSoon from '@/assets/img/coming-soon.jpg';
 import ParallaxEffect from '@/assets/img/parallax-effect.png';
+import Carousel from '@/assets/img/carousel.png';
 
 // Consts
 import { LangType } from '@/src/pages/app';
@@ -27,20 +28,28 @@ const SectionProject: React.FC<{ lang: LangType }> = ({ lang }) => {
       link: 'https://dghome3d.com/',
     },
     {
-      imageSrc: DemoThreejs,
-      imageAlt: lang.demoReactThree,
-      imageClassName: '',
-      title: lang.demoReactThree,
-      content: lang.demoReactThreeContent,
-      link: 'https://monster-git-main-nguyenvuhoangbts-projects.vercel.app/',
-    },
-    {
       imageSrc: ParallaxEffect,
       imageAlt: lang.parallaxEffect,
       imageClassName: '',
       title: lang.parallaxEffect,
       content: lang.parallaxEffectContent,
       link: 'https://parallax-effect-omega.vercel.app/',
+    },
+    {
+      imageSrc: Carousel,
+      imageAlt: lang.carousel,
+      imageClassName: '',
+      title: lang.carousel,
+      content: lang.carouselContent,
+      link: 'https://wallpaper-sigma-seven.vercel.app/',
+    },
+    {
+      imageSrc: DemoThreejs,
+      imageAlt: lang.demoReactThree,
+      imageClassName: '',
+      title: lang.demoReactThree,
+      content: lang.demoReactThreeContent,
+      link: 'https://monster-woad.vercel.app/',
     },
     {
       imageSrc: ComingSoon,

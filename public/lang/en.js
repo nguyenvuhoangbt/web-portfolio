@@ -52,6 +52,9 @@ const messages = {
   parallaxEffect: 'Demo Parallax Effect',
   parallaxEffectContent:
     'An engaging parallax scrolling demo using Nuxt 3, TailwindCSS, and GSAP. The goal was to create a visually appealing and smooth user experience with dynamic animations.',
+  carousel: 'Demo Carousel',
+  carouselContent:
+    'An interactive image carousel built with Next.js, styled with Tailwind CSS, and animated using GSAP. Users can click to slide through images, with each transition smoothly changing both the image and background.',
 };
 
 export default messages;
